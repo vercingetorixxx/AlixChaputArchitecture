@@ -53,11 +53,17 @@
   margin-right:20px;
 }
 
-#introtext > img{
+#introclose{
+  height:100px;
+  display:flex;
+  justify-content:space-between;
+}
+
+#signature{
   float:right;
   margin-left:10px;
-  width:100px;
-  height:30px;
+  width:200px;
+  height:60px;
 }
 
 #introtext{
