@@ -1,2 +1,2 @@
 # AlixChaputArchitecture
-The GitHub repository for Alix Chaput's architecture portfolio website, constructed by Chanwu Oh.
+The GitHub repository for the architect Alix Chaput's portfolio website, constructed by Chanwu Oh.
