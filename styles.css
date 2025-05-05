@@ -41,7 +41,9 @@
   position:absolute;
   top:17vh;
   left:15%;
-  margin:0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #intro > img{
@@ -49,4 +51,8 @@
   width:313.5px;
   float:left;
   margin-right:20px;
+}
+
+#introtext{
+  flex: 1;
 }
