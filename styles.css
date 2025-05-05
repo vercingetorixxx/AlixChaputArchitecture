@@ -53,6 +53,11 @@
   margin-right:20px;
 }
 
+#introtext > img{
+  float:right;
+  margin-left:10px;
+}
+
 #introtext{
   flex: 1;
 }
