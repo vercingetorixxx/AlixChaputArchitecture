@@ -56,6 +56,8 @@
 #introtext > img{
   float:right;
   margin-left:10px;
+  width:100px;
+  height:30px;
 }
 
 #introtext{
