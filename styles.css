@@ -23,8 +23,6 @@
   position:absolute;
   bottom:0.5vw;
   left:15vw;
-  margin:0;
-  display:inline;
 }
 
 #links{
@@ -33,7 +31,7 @@
   bottom:0.5vw;
   right:15vw;
   display:flex;
-  justify-content: spaced-evenly;
+  justify-content: space-evenly;
   width:20%;
   height:5vh;
 }
