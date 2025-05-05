@@ -2,6 +2,10 @@
   font-family:Arial;
 }
 
+body{
+  margin:0;
+}
+
 #header{
   width:100%;
   height:10vh;
@@ -9,6 +13,7 @@
   top:0;
   border-bottom:1px solid black;
   z-index: 5;
+  display:block;
 }
 
 #headertext{
@@ -37,13 +42,16 @@
 }
 
 #intro{
-  width: 70%;
-  position:absolute;
-  top:17vh;
-  left:15%;
-  margin: 0;
+  width: 100%;
+  margin: 2vw auto;
   display: flex;
   flex-wrap: wrap;
+}
+
+#content{
+  width:70%;
+  height:100vw;
+  margin: 15vh auto;
 }
 
 #intro > img{
@@ -59,17 +67,82 @@
   justify-content:space-between;
 }
 
+#introclosetext a{
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+}
+
 #signature{
   float:right;
   margin-left:10px;
-  width:200px;
-  height:60px;
+  width:300px;
+  height:80px;
 }
 
 #introtext{
   flex: 1;
+  text-align:justify;
 }
 
 p{
   margin: 0;
+}
+
+.resume{
+  width:100%;
+  height:max-content;
+}
+
+h2, h3{
+  margin:0;
+}
+
+.header > h2{
+  width: calc(100% - 333.5px);
+  height:max-content;
+  text-align:left;
+  float:right;
+}
+
+.header::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.content{
+  width: calc(100% - 333.5px);
+  height:max-content;
+  text-align:left;
+  float:right;
+}
+
+.date{
+  width: 313.5px;
+  text-align:right;
+  display:inline-block;
+}
+
+.section{
+  width:100%;
+  margin-top:1vw;
+}
+
+.section::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.subheader{
+  transition: transform 0.5s ease;
+}
+
+.subheader:hover{
+  transform: translateX(1em);
+}
+
+.header{
+  margin-top:5vw;
 }
