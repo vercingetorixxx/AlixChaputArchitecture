@@ -21,6 +21,19 @@
 
 #title{
   position:absolute;
-  bottom:10px;
-  left:50px;
+  bottom:0.5vw;
+  left:15vw;
+  margin:0;
+  display:inline;
+}
+
+#links{
+  text-decoration:none;
+  position:absolute;
+  bottom:0.5vw;
+  right:15vw;
+  display:flex;
+  justify-content: spaced-evenly;
+  width:20%;
+  height:5vh;
 }
