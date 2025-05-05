@@ -10,12 +10,17 @@
   border-bottom:1px solid black;
 }
 
+#text{
+  height:100%;
+  position:relative;
+}
+
 .bold{
   font-weight:bold;
 }
 
 #title{
-  position:relative;
-  bottom:5px;
-  left:30px;
+  position:absolute;
+  bottom:10px;
+  left:50px;
 }
