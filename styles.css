@@ -55,5 +55,8 @@
 
 #introtext{
   flex: 1;
+}
+
+#introtext > p{
   margin: 0;
 }
