@@ -1,0 +1,429 @@
+*{
+  font-family:Arial;
+}
+
+.bold{
+  font-weight:bold;
+}
+
+p, h1, h2, h3, h4{
+  margin: 0;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  text-align:right;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:-1;
+  background: linear-gradient(
+    to right,
+    rgb(200, 220, 255) 0%,
+    rgb(220, 230, 240) 20%,
+    rgb(240, 240, 220) 50%,
+    rgb(255, 220, 230) 100%
+  );
+}
+
+#nav{
+  width:100%;
+  height:4rem;
+  position:fixed;
+  border-bottom:1px solid red;
+  z-index: 5;
+  background-color:#FFFFFF;
+  color:red;
+}
+
+#navtext{
+  width:64rem;
+  height:100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  padding:0.5rem;
+}
+
+#links{
+  display:flex;
+  justify-content: space-between;
+  width:21rem;
+}
+
+.link{
+  text-decoration:none;
+  transition: transform 0.5s ease;
+  color:red;
+}
+
+.link:hover{
+  transform:scale(1.15);
+}
+
+#intro{
+  width: 100%;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  border:1px solid red;
+  padding:1.5rem;
+  box-sizing:border-box;
+  background:#FFFFFF;
+}
+
+#main{
+  width:64rem;
+  margin: 6.5rem auto;
+  flex-grow: 1;
+}
+
+#intro > img{
+  height:365px;
+  width:19.5rem; /*need to deal with this!*/
+  float:left;
+  margin-right:1.5rem;
+  border:1px solid red;
+  box-sizing: border-box;
+}
+
+
+/* ------------ABOUT------------ */
+
+
+#introclose{
+  height:fit-content;
+  display:flex;
+  justify-content:space-between;
+  text-align:left;
+}
+
+#introclosetext a{
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+  display:inline-block;
+  transition: transform 0.5s ease;
+}
+
+#introclosetext a:hover{
+  transform:scale(1.15);
+}
+
+#signature{
+  float:right;
+  margin-left:1.5rem;
+  width:20rem;
+  height:5rem;
+}
+
+#introtext{
+  flex: 1;
+  text-align:justify;
+  line-height:1.3;
+}
+
+.resume{
+  width:100%;
+  height:max-content;
+}
+
+.section{
+  width:100%;
+  border:1px solid red;
+  padding:1.5rem;
+  box-sizing: border-box;
+  background:#FFFFFF;
+}
+
+.section:not(:last-of-type){
+  margin-bottom:2.5rem;
+}
+
+.section::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.header > h2{
+  width: calc(100% - 21rem);
+  height:max-content;
+  text-align:left;
+  float:right;
+}
+
+.header::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.content{
+  width: calc(100% - 21rem);
+  height:max-content;
+  text-align:left;
+  float:right;
+  text-align:justify;
+  line-height:1.3;
+}
+
+.date{
+  width: 19.5rem;
+  margin-right:1.5rem;
+  text-align:right;
+  display:inline-block;
+  box-sizing:border-box;
+  margin-top:0.09rem;
+}
+
+.subheader{
+  transition: transform 0.5s ease;
+}
+
+.subheader:hover{
+  transform: translateX(1em);
+}
+
+.subsection{
+  width:100%;
+  height:fit-content;
+  margin-top:1rem;
+  box-sizing:border-box;
+}
+
+.subsection::after{
+  content: "";
+  display:block;
+  clear:both;
+}
+
+.subsubsection{
+  width: calc(100% - 22.5rem);
+  float:right;
+  text-align:justify;
+  line-height:1.3;
+  margin-top:1rem;
+}
+
+.maintools:not(.first){
+  margin-top:1rem;
+}
+
+.date img{
+  height:3rem;
+  margin-right:0.7rem;
+}
+
+.date img[src="images/revit.png"]{
+  margin-right:0.5rem;
+}
+
+footer{
+  color:red;
+  margin:1rem;
+}
+
+
+/* -----------CONTACT----------- */
+
+
+#contact{
+  width: calc(100% - 21rem);
+  box-sizing:border-box;
+  height:34rem;
+}
+
+form{
+  width:100%;
+  height:28rem;
+  box-sizing:border-box;
+}
+
+#contacthead{
+  width:100%;
+  height:4rem;
+  box-sizing:border-box;
+  display:inline-block;
+  text-align:left;
+  font-size:2rem;
+  text-align:center;
+}
+
+#form-row{
+  width:100%;
+  box-sizing:border-box;
+  height:50%;
+  display:flex;
+  justify-content:space-between;
+}
+
+.form-item{
+  height:50%;
+  box-sizing:border-box;
+  line-height:2;
+}
+
+#form-left, #form-right{
+  width:49%;
+  height:100%;
+  box-sizing:border-box;
+  text-align:center;
+}
+
+#form-right a{
+  text-decoration: none;
+  font-weight:bold;
+  transition: transform 0.5s ease;
+  color:black;
+}
+
+#form-right a:hover{
+  transform:scale(1.15);
+  display:inline-block;
+}
+
+#form-bottom{
+  width:100%;
+  height:59%;
+  box-sizing:border-box;
+  display:block;
+  text-align:center;
+}
+
+input{
+  border:0;
+  border-bottom:1px solid black;
+  width:12rem;
+  background-color: #FFFFFF;
+}
+
+input:focus{
+  border-bottom:3px solid black;
+  outline:none;
+}
+
+input:valid{
+  border-bottom:3px solid green;
+}
+
+textarea{
+  width:min(100%, 500px);
+  height:8.5rem;
+  box-sizing:border-box;
+}
+
+textarea:focus{
+  outline:none;
+  border:3px solid black;
+}
+
+textarea:valid{
+  border:3px solid green;
+}
+
+[type="submit"]{
+  border:1px solid black !important;
+  width:30%;
+  height:20%;
+  font-size:1.2rem;
+  border-radius:5%;
+  background-color:white;
+  transition: transform 0.5s ease;
+  background-color: #FFFFFF;
+}
+
+[type="submit"]:hover{
+  transform:scale(1.15);
+}
+
+
+/* -----------PROJECTS----------- */
+
+
+.grid-container{
+  width:76rem;
+  display:grid;
+  grid-template-rows:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
+  gap:4rem;
+}
+
+.grid-item{
+  width:100%;
+  height:100%;
+  box-sizing:border-box;
+  border:1px solid red;
+  padding:0.5rem;
+  background:#FFFFFF;
+}
+
+.grid-wrapper{
+  display:flex;
+}
+
+.grid-item img{
+  width:100%;
+  transition: transform 0.5s ease;
+}
+
+.grid-item img:hover{
+  transform:scale(1.1);
+}
+
+.imgcaption{
+  width:fit-content;
+  text-align:justify;
+  margin:0.5rem;
+  overflow:auto;
+  max-height:10rem;
+  font-size:small;
+}
+
+/* -----------PROJECT1----------- */
+
+.specs, .details{
+  height:fit-content;
+  text-align:left;
+  box-sizing: border-box;
+  line-height:1.3;
+}
+
+.specs{
+  width:100%;
+  margin-bottom:1.5rem;
+}
+
+.details{
+  width:49%;
+}
+
+.detailscontainer{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:1.5rem;
+}
+
+.mediacontainer:not(:last-of-type){
+  margin-bottom:1.5rem;
+}
+
+iframe{
+  width:61rem;
+  height:34.31rem;
+}
+
+#intro img[class="projectimg"]{
+  width:61rem;
+}
