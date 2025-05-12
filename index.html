@@ -24,9 +24,11 @@
   <div id="main">
 
     <div id="intro">
-      <div id="imgcontainer">
+      <picture id="imgcontainer">
+        <source media="(min-width: 1025px)" srcset="images/large.webp">
+        <source media="(max-width: 1024px)" srcset="images/small.webp">
         <img src="images/output.webp" alt="Alix Chaput Profile Photo"/>
-      </div>
+      </picture>
       <div id="introcontent">
         <div id="introtextwrapper">
           <div id="introtext">
