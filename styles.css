@@ -193,6 +193,13 @@ footer{
   column-count: 2;
   column-gap: var(--thirdunit);
 }
+#introtext p:first-of-type::first-letter{
+  font-size: 2.6rem;
+  color: red;
+  float: left;
+  margin-right: 0.6rem;
+  margin-top: 0.3rem;
+}
 
 #signature{
   width: var(--sig_width);
@@ -596,27 +603,28 @@ img[class="projectimg"]{
     column-count: 2;
     column-gap: var(--thirdunit);
   }
-  .section{
+  .section:not(#maintools){
     grid-template-columns: repeat(1, 1fr);
   }
-  .section-item:first-child{
+  .section:not(#maintools) .section-item:first-child{
     grid-column: span 1;
+  }
+  .section-item:first-child{
     font-size: 1.5rem;
   }
   .longform{
-    display: block;
+    flex-direction: column;
   }
   .longhead{
     font-size: 1.5rem;
   }
+  .longleft, .longright{
+    padding: var(--halfunit);
+  }
   .longleft{
     margin-right: 0;
     width: 100%;
-    padding: var(--halfunit);
     padding-bottom: 0;
-  }
-  .longright{
-    padding: var(--halfunit);
   }
   .longright .content-wrapper{
     max-height: calc(50svh - var(--unit));
