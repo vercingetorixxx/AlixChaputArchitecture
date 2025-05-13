@@ -1,5 +1,5 @@
 :root{
-  --unit: 14vh;
+  --unit: 14dvh;
   --halfunit: calc(var(--unit) / 2);
   --doubleunit: calc(var(--unit) * 2);
   --thirdunit: calc(var(--halfunit) / 1.5);
@@ -9,12 +9,12 @@
   --navheight: var(--halfunit);
   --nav_padding_bottom: calc(var(--halfunit) * 0.1);
   --main_margin_top: calc(var(--unit) + var(--navheight));
-  --intro_height: calc(100vh - (var(--unit) + var(--main_margin_top)));
+  --intro_height: calc(100dvh - (var(--unit) + var(--main_margin_top)));
   --img_container_width: calc((var(--elwidth) - var(--unit)) / 3);
   --container_background: rgba(255,255,255,0.5);
   --sig_width: calc(var(--unit) * 1.2);
   --sig_height: calc(var(--halfunit) - 2rem);
-  --item_maxheight: 50vh;
+  --item_maxheight: 50dvh;
 }
 
 @font-face {
@@ -292,7 +292,7 @@ ul:last-of-type{
   padding: var(--halfunit);
   background: var(--container_background);
   max-height: var(--item_maxheight);
-  min-width: min(33vh, calc((var(--elwidth) - var(--halfunit)) / 2))
+  min-width: min(33dvh, calc((var(--elwidth) - var(--halfunit)) / 2))
 }
 
 .longright{
@@ -524,7 +524,7 @@ img[class="projectimg"]{
 
 @media (max-width: 1024px){
   :root{
-    --unit: 10vh;
+    --unit: 10dvh;
     --navheight: calc(var(--halfunit) * 1.39);
     --sig_width: calc(var(--unit) * 1.6);
     --sig_height: calc(var(--halfunit) * 0.77);
@@ -590,7 +590,7 @@ img[class="projectimg"]{
 
 @media (max-width: 900px){
   :root{
-    --unit: 8vh;
+    --unit: 8dvh;
   }
   #introtext, .right-content{
     column-count: 2;
@@ -619,7 +619,7 @@ img[class="projectimg"]{
     padding: var(--halfunit);
   }
   .longright .content-wrapper{
-    max-height: calc(50vh - var(--unit));
+    max-height: calc(50dvh - var(--unit));
   }
   .form-item.header{
     font-size: 1.5rem;
@@ -644,6 +644,6 @@ img[class="projectimg"]{
 
 @media (max-width: 575px){
   :root{
-    --unit: 6vh;
+    --unit: 6dvh;
   }
 }
