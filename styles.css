@@ -15,6 +15,12 @@
   --sig_width: calc(var(--unit) * 1.2);
   --sig_height: calc(var(--halfunit) - 2rem);
   --item_maxheight: 50svh;
+  --bg_gradient_colors: 
+    rgb(225, 216, 230) 0%,
+    rgb(210, 230, 240) 20%,
+    rgb(240, 240, 220) 50%,
+    rgb(255, 220, 230) 80%,
+    rgb(225, 216, 230) 100%;
 }
 
 @font-face {
@@ -92,15 +98,8 @@ body::before{
   right: 0;
   z-index: -1;
   background: repeating-linear-gradient(
-    to right,
-    rgb(225, 216, 230) 0%,
-    rgb(210, 230, 240) 20%,
-    rgb(240, 240, 220) 50%,
-    rgb(255, 220, 230) 80%,
-    rgb(225, 216, 230) 100%
-  );
-  background-size: 100vw 100%;  /* Double width for shifting effect */
-  animation: waveShift 25s linear infinite;
+    to right, var(--bg_gradient_colors));
+  animation: waveShift 15s linear infinite;
 }
 
 #nav{
@@ -209,24 +208,28 @@ footer{
   right: 1rem;
 }
 
-#introclosetext{
+.introclosetext{
   position: absolute;
   top: calc(100% + 1rem);
   right: 1rem;
   text-align: right;
 }
 
-#introclosetext, #introclosetext *{
+.introclosetext, .introclosetext *{
   color: red; 
   display: inline-block;
   transition: transform 0.5s ease;
 }
 
-#introclosetext a:hover{
+.introclosetext.short{
+  display: none;
+}
+
+.introclosetext a:hover{
   transform: translateX(-1em);
 }
 
-#introclosetext a:nth-of-type(2):hover{
+.introclosetext a:nth-of-type(2):hover{
   transform: translateX(1em);
 }
 
@@ -267,6 +270,7 @@ footer{
   padding: var(--halfunit);
   background: var(--container_background);
   max-height: var(--item_maxheight);
+  max-width: 100%;
 }
 
 ul:last-of-type{
@@ -599,6 +603,23 @@ img[class="projectimg"]{
   :root{
     --unit: 8svh;
   }
+
+  @keyframes waveShift {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 100vh;
+    }
+  }
+  body::before{
+    background: repeating-linear-gradient(
+      to bottom, var(--bg_gradient_colors));
+  } 
+  /* need to reload page for animation 
+  to change orientation, otherwise
+  gradient becomes static */
+
   #introtext, .right-content{
     column-count: 2;
     column-gap: var(--thirdunit);
@@ -614,20 +635,29 @@ img[class="projectimg"]{
   }
   .longform{
     flex-direction: column;
+    gap: var(--halfunit);
+    background-color: var(--container_background);
   }
   .longhead{
     font-size: 1.5rem;
   }
   .longleft, .longright{
     padding: var(--halfunit);
+    background: none;
   }
   .longleft{
     margin-right: 0;
     width: 100%;
     padding-bottom: 0;
   }
+  .longright{
+    padding-top: 0;
+  }
   .longright .content-wrapper{
-    max-height: calc(50svh - var(--unit));
+    max-height: calc(var(--item_maxheight) - var(--unit));
+  }
+  #maintools{
+    gap: var(--halfunit) var(--quarterunit);
   }
   .form-item.header{
     font-size: 1.5rem;
@@ -636,13 +666,21 @@ img[class="projectimg"]{
 
 
 /* ----------------------------------- */
-/*bkmk*/
 
 
 @media (max-width: 700px){
+  :root{
+    --item_maxheight: 70svh;
+  }
   #introtext, .right-content{
     column-count: 1;
     column-gap: var(--thirdunit);
+  }
+  .introclosetext.long{
+    display: none;
+  }
+  .introclosetext.short{
+    display: inline-block;
   }
   .grid-container{
     grid-template-columns: repeat(1, 1fr);
@@ -653,5 +691,14 @@ img[class="projectimg"]{
 @media (max-width: 575px){
   :root{
     --unit: 6svh;
+  }
+  #signature{
+    bottom: calc(100% + 0.5rem);
+  }
+  .introclosetext.short{
+    top: calc(100% + 0.5rem);
+  }
+  #maintools{
+    gap: var(--halfunit) var(--eighthunit);
   }
 }
