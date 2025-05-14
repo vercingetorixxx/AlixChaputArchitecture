@@ -503,7 +503,7 @@ img[class="projectimg"]{
 
 
 
-@media (max-width: 1560px) or (max-aspect-ratio: 8/3){
+@media (max-width: 1560px) or (max-aspect-ratio: 1/3){
   .section-item{
     padding: var(--thirdunit);
   }
@@ -513,7 +513,7 @@ img[class="projectimg"]{
 /* ----------------------------------- */
 
 
-@media (max-width: 1300px) or (max-aspect-ratio: 8/3){
+@media (max-width: 1300px) or (max-aspect-ratio: 1/3){
   #introtext, .right-content{
     column-gap: var(--quarterunit);
   }
@@ -530,7 +530,7 @@ img[class="projectimg"]{
 /* ----------------------------------- */
 
 
-@media (max-width: 1250px) or (max-aspect-ratio: 8/3){
+@media (max-width: 1250px) or (max-aspect-ratio: 1/3){
   #introtext, .right-content{
     column-count: 1;
   }
@@ -547,7 +547,7 @@ img[class="projectimg"]{
 
 
 
-@media (max-width: 1024px) or (max-aspect-ratio: 8/3){
+@media (max-width: 1024px) or (max-aspect-ratio: 1/3){
   :root{
     --unit: 10svh;
     --navheight: calc(var(--halfunit) * 1.39);
@@ -604,7 +604,7 @@ img[class="projectimg"]{
 /* ----------------------------------- */
 
 
-@media (max-width: 900px) or (max-aspect-ratio: 8/3){
+@media (max-width: 900px) or (max-aspect-ratio: 1/3){
   :root{
     --unit: 8svh;
   }
@@ -811,7 +811,7 @@ img[class="projectimg"]{
 /* ----------------------------------- */
 
 
-@media (max-width: 700px) or (max-aspect-ratio: 8/3){
+@media (max-width: 700px) or (max-aspect-ratio: 1/3){
   #introtext, .right-content{
     column-count: 1;
     column-gap: var(--thirdunit);
@@ -831,7 +831,7 @@ img[class="projectimg"]{
 }
 
 
-@media (max-width: 575px) or (max-aspect-ratio: 8/3){
+@media (max-width: 575px) or (max-aspect-ratio: 1/3){
   :root{
     --unit: 6svh;
     --navheight: calc(var(--halfunit) * 1.84);
