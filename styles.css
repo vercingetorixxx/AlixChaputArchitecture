@@ -12,8 +12,8 @@
   --intro_height: calc(100svh - (var(--unit) + var(--main_margin_top)));
   --img_container_width: calc((var(--elwidth) - var(--unit)) / 3);
   --container_background: rgba(255,255,255,0.5);
-  --sig_width: calc(var(--unit) * 1.2);
   --sig_height: calc(var(--halfunit) - 2rem);
+  --sig_width: calc(var(--sig_height) * 4);
   --item_maxheight: calc(100svh - (var(--unit) * 3));
   --bg_gradient_colors: 
     rgb(225, 216, 230) 0%,
@@ -213,7 +213,7 @@ footer{
   width: var(--sig_width);
   height: var(--sig_height);
   position: absolute;
-  bottom: 1rem;
+  bottom: calc(var(--unit) * 0.115);
   right: 1rem;
 }
 
@@ -342,8 +342,8 @@ footer{
 }
 
 .imgcaption{
-  max-height: var(--doubleunit);
-  padding: var(--eighthunit);
+  max-height: calc(var(--doubleunit) * 2);
+  padding: var(--quarterunit);
   background: var(--container_background);
   text-align: justify;
   display: flex;
@@ -426,20 +426,24 @@ textarea{
   flex-grow: 1;
 }
 
-#contactclosetext{
+.contactclosetext.short{
+  display: none;
+}
+
+.contactclosetext{
   position: absolute;
   bottom: calc(100% + 1rem);
   right: 1rem;
   text-align: right;
 }
 
-#contactclosetext, #contactclosetext *{
+.contactclosetext, .contactclosetext *{
   color: red; 
   display: inline-block;
   transition: transform 0.5s ease;
 }
 
-#contactclosetext a:hover{
+.contactclosetext a:hover{
   transform: translateX(-1em);
 }
 
@@ -459,6 +463,10 @@ textarea{
 
 .longform.content-wrapper{
   margin-bottom: 0;
+}
+
+.longleft.project{
+  height: fit-content;
 }
 
 .content-wrapper.item{
@@ -495,7 +503,7 @@ img[class="projectimg"]{
 
 
 
-@media (max-width: 1560px){
+@media (max-width: 1560px) or (max-aspect-ratio: 8/3){
   .section-item{
     padding: var(--thirdunit);
   }
@@ -505,7 +513,7 @@ img[class="projectimg"]{
 /* ----------------------------------- */
 
 
-@media (max-width: 1300px){
+@media (max-width: 1300px) or (max-aspect-ratio: 8/3){
   #introtext, .right-content{
     column-gap: var(--quarterunit);
   }
@@ -522,7 +530,7 @@ img[class="projectimg"]{
 /* ----------------------------------- */
 
 
-@media (max-width: 1250px){
+@media (max-width: 1250px) or (max-aspect-ratio: 8/3){
   #introtext, .right-content{
     column-count: 1;
   }
@@ -539,12 +547,11 @@ img[class="projectimg"]{
 
 
 
-@media (max-width: 1024px){
+@media (max-width: 1024px) or (max-aspect-ratio: 8/3){
   :root{
     --unit: 10svh;
     --navheight: calc(var(--halfunit) * 1.39);
-    --sig_width: calc(var(--unit) * 1.6);
-    --sig_height: calc(var(--halfunit) * 0.77);
+    --sig_height: calc(var(--halfunit) * 0.60);
   }
   #intro{
     flex-direction: column;
@@ -561,10 +568,6 @@ img[class="projectimg"]{
   #imgcontainer img{
     object-fit: cover;
     object-position: 50% 27%;
-  }
-  #signature{
-    bottom: calc(100% + 1rem);
-    right: 1rem;
   }
 
   form{
@@ -601,7 +604,7 @@ img[class="projectimg"]{
 /* ----------------------------------- */
 
 
-@media (max-width: 900px){
+@media (max-width: 900px) or (max-aspect-ratio: 8/3){
   :root{
     --unit: 8svh;
   }
@@ -610,7 +613,7 @@ img[class="projectimg"]{
   .link:hover, .introclosetext a:hover, 
   .introclosetext a:nth-of-type(2):hover, 
   #envelope-shape:hover, .grid-item img:hover,
-  #contactclosetext a:hover{
+  .contactclosetext a:hover{
     transform: none;
   }
   .link:hover{
@@ -637,8 +640,8 @@ img[class="projectimg"]{
     50% { transform: translateX(0.5em); }
     100% { transform: translateX(0em); }
   }
-  #envelope-shape, .links.hamburger.short .link, .links.hamburger.long .link{
-    animation: scale 5s ease-in-out infinite !important;
+  #envelope-shape{
+    animation: scale 5s ease-in-out infinite;
   }
   .grid-item img{
     animation: scalestagger 11s ease-in-out infinite;
@@ -655,7 +658,7 @@ img[class="projectimg"]{
   .grid-item:nth-child(10) img { animation-delay: 9s; }
   .grid-item:nth-child(11) img { animation-delay: 10s; }
 
-  .introclosetext a, #contactclosetext a{
+  .introclosetext a, .contactclosetext a{
     animation: shiftleft 5s infinite;
   }
   .introclosetext a:nth-of-type(2){
@@ -797,13 +800,18 @@ img[class="projectimg"]{
   .form-item.header{
     font-size: 1.5rem;
   }
+
+  .content-wrapper.item{
+    overflow-y: visible;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 
 /* ----------------------------------- */
 
 
-@media (max-width: 700px){
+@media (max-width: 700px) or (max-aspect-ratio: 8/3){
   #introtext, .right-content{
     column-count: 1;
     column-gap: var(--thirdunit);
@@ -817,19 +825,33 @@ img[class="projectimg"]{
   .grid-container{
     grid-template-columns: repeat(1, 1fr);
   }
+  .content-wrapper.item{
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 
-@media (max-width: 575px){
+@media (max-width: 575px) or (max-aspect-ratio: 8/3){
   :root{
     --unit: 6svh;
     --navheight: calc(var(--halfunit) * 1.84);
+  }
+  .section-item.header, .longhead, 
+  .form-item.header{
+    font-size: 1.3rem;
+  }
+  .navtext{
+    width: 100%;
+  }
+  .links.hamburger.short{
+    margin-left: var(--thirdunit);
   }
   .title.long{
     display: none;
   }
   .title.short{
     display: inline-block;
+    margin-left: var(--thirdunit);
   }
   .links.hamburger.long{
     display: none;
@@ -841,16 +863,22 @@ img[class="projectimg"]{
     margin-left: 0;
     margin-right: 0;
   }
-  #signature{
-    bottom: calc(100% + 0.5rem);
-  }
   .introclosetext.short{
     top: calc(100% + 0.5rem);
   }
   #maintools{
     gap: var(--halfunit) var(--eighthunit);
   }
-  #maintools .section-item:not(.header){
-    padding: var(--eighthunit);
+  .contactclosetext.long{
+    display: none;
+  }
+  .contactclosetext.short{
+    display: inline-block;
+  }
+  .contactclosetext.short img{
+    display: inline;
+    vertical-align: top;
+    height: 1.3rem;
+    width: 1.3rem;
   }
 }
