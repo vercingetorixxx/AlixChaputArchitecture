@@ -25,28 +25,28 @@
 
 @font-face {
     font-family: 'dinpro';
-    src: url('./dinpro/dinpro-light.ttf') format('truetype');
+    src: url('../dinpro/dinpro-light.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
   font-family: 'dinpro';
-  src: url('./dinpro/dinpro-medium.ttf') format('truetype');
+  src: url('../dinpro/dinpro-medium.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'dinpro';
-  src: url('./dinpro/dinpro-bold.ttf') format('truetype');
+  src: url('../dinpro/dinpro-bold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'dinpro';
-  src: url('./dinpro/dinpro-black.ttf') format('truetype');
+  src: url('../dinpro/dinpro-black.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
@@ -147,6 +147,18 @@ body::before{
 
 #hamburger{
   display: none;
+}
+
+.language img{
+  display: inline;
+  height: 0.88rem;
+  width: 1.32rem;
+  margin-bottom: -1.3px;
+}
+.language.long{
+  position: absolute;
+  top: 5px;
+  right: 18px;
 }
 
 #main{
@@ -278,6 +290,12 @@ footer{
   padding: var(--halfunit);
   background: var(--container_background);
   max-height: var(--item_maxheight);
+  display: flex;
+  flex-direction: column;
+}
+
+.section-item:not(#maintools .section-item){
+  height: fit-content;
 }
 
 .good-mention li::marker{
@@ -306,7 +324,11 @@ footer{
   margin-right: var(--halfunit);
   padding: var(--halfunit);
   background: var(--container_background);
-  min-width: min(33svh, calc((var(--elwidth) - var(--halfunit)) / 2))
+  min-width: min(33svh, calc((var(--elwidth) - var(--halfunit)) / 2));
+  height: fit-content;
+  max-height: var(--item_maxheight);
+  display: flex;
+  flex-direction: column;
 }
 
 .longright{
@@ -463,10 +485,8 @@ textarea{
 
 .longform.content-wrapper{
   margin-bottom: 0;
-}
-
-.longleft.project{
-  height: fit-content;
+  max-height: var(--item_maxheight);
+  overflow-y: hidden;
 }
 
 .content-wrapper.item{
@@ -759,6 +779,12 @@ img[class="projectimg"]{
   .navtext{
     padding: 0 0.5rem var(--nav_padding_bottom) 0.5rem;
   }
+  .language.long{
+    display: none;
+  }
+  .language.short{
+    display: inline-block;
+  }
 
   #introtext, .right-content{
     column-count: 2;
@@ -784,7 +810,7 @@ img[class="projectimg"]{
     padding: var(--halfunit);
   }
   .longform.content-wrapper{
-    margin-bottom: 0;
+    overflow-y: auto;
   }
   .longleft, .longright{
     padding: 0;
