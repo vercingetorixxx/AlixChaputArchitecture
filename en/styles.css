@@ -74,6 +74,10 @@ h3, h4{
   margin-bottom: calc(var(--halfunit) / 4);
 }
 
+ul:last-of-type{
+  margin-bottom: 0;
+}
+
 body{
   margin: 0;
   position: relative;
