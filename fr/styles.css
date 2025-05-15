@@ -824,6 +824,9 @@ img[class="projectimg"]{
     margin-right: 0;
     width: 100%;
   }
+  .longleft ul{
+    margin-bottom: 1rem;
+  }
   #maintools{
     gap: var(--halfunit) var(--quarterunit);
   }
