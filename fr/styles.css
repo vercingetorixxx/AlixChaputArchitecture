@@ -183,10 +183,13 @@ body::before{
   right: 18px;
 }
 
-#main{
+main{
   width: var(--elwidth);
   margin: var(--main_margin_top) auto var(--unit) auto;
   flex-grow: 1;
+}
+main[class="contact"]{
+  margin-bottom: 0;
 }
 
 footer{
