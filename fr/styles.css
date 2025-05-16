@@ -94,7 +94,7 @@ ul:last-of-type{
 body{
   margin: 0;
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   border: 1px solid transparent;
 }
 
@@ -187,9 +187,6 @@ main{
   width: var(--elwidth);
   margin: var(--main_margin_top) auto var(--unit) auto;
   flex-grow: 1;
-}
-main[class="contact"]{
-  margin-bottom: 0;
 }
 
 footer{
