@@ -99,6 +99,7 @@ body{
   background: repeating-linear-gradient(to right, var(--bg_gradient_colors));
 }
 body [class="contact"]{
+  min-height: 100svh;
   height: 100svh;
 }
 
