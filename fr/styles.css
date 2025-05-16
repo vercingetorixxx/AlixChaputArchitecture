@@ -96,9 +96,10 @@ body{
   position: relative;
   min-height: 100vh;
   border: 1px solid transparent;
-  background: repeating-linear-gradient(to right, var(--bg_gradient_colors));
+  background: repeating-linear-gradient(
+    to right, var(--bg_gradient_colors));
 }
-body [class="contact"]{
+.contact{
   min-height: 100svh;
   height: 100svh;
 }
@@ -721,7 +722,8 @@ img[class="projectimg"]{
     }
   }
   body{
-    background: repeating-linear-gradient(to bottom, var(--bg_gradient_colors));
+    background: repeating-linear-gradient(
+      to bottom, var(--bg_gradient_colors));
   }
   body::before{
     background: repeating-linear-gradient(
