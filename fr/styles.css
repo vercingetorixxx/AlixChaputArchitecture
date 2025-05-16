@@ -101,7 +101,6 @@ body{
 }
 .contact{
   min-height: 100svh;
-  height: 100svh;
 }
 
 @keyframes waveShift {
@@ -960,6 +959,9 @@ img[class="projectimg"]{
     vertical-align: top;
     height: 1.3rem;
     width: 1.3rem;
+  }
+  .contact{
+    height: 100svh;
   }
 }
 
