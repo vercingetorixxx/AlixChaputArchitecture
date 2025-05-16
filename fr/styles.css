@@ -94,8 +94,11 @@ ul:last-of-type{
 body{
   margin: 0;
   position: relative;
-  min-height: 100svh;
+  min-height: 100vh;
   border: 1px solid transparent;
+}
+body [class="contact"]{
+  height: 100svh;
 }
 
 @keyframes waveShift {
