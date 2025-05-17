@@ -12,7 +12,7 @@
   --intro_height: calc(100svh - (var(--unit) * 2 + var(--navheight)));
   --img_container_width: calc((var(--elwidth) - var(--unit)) / 3);
   --container_background: rgba(255,255,255,0.5);
-  --sig_height: calc(var(--halfunit) - 2rem);
+  --sig_height: calc(var(--halfunit) - 1rem);
   --sig_width: calc(var(--sig_height) * 2.73);
   --item_maxheight: calc(100svh - (var(--unit) * 3));
   --sectionitem_height: calc((var(--elwidth) - var(--halfunit)) / 3);
@@ -266,7 +266,7 @@ main{
   width: var(--sig_width);
   height: var(--sig_height);
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.35rem;
   right: 1rem;
 }
 
@@ -654,7 +654,7 @@ img[class="projectimg"]{
   :root{
     --unit: 10svh;
     --navheight: calc(var(--halfunit) * 1.39);
-    --sig_height: calc(var(--halfunit) * 0.60);
+    --sig_height: calc(var(--halfunit) - 0.5rem);
   }
   .intro{
     flex-direction: column;
@@ -667,7 +667,7 @@ img[class="projectimg"]{
     top: calc(100% + 0.5rem);
   }
   #signature{
-    bottom: 0.5rem;
+    bottom: 0.1rem;
   }
   .contactclosetext{
     bottom: calc(100% + 0.5rem);
@@ -923,6 +923,7 @@ img[class="projectimg"]{
   :root{
     --unit: 6svh;
     --navheight: calc(var(--halfunit) * 1.84);
+    --sig_height: calc(var(--halfunit) - 0.2rem);
   }
   .header h1, .header h2{
     font-size: 2em;
@@ -954,7 +955,7 @@ img[class="projectimg"]{
     top: calc(100% + 0.2rem);
   }
   #signature{
-    bottom: 0.2rem;
+    bottom: 0rem;
   }
   .contactclosetext{
     bottom: calc(100% + 0.2rem);
