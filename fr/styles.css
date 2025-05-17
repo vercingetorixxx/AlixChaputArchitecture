@@ -5,11 +5,11 @@
   --thirdunit: calc(var(--halfunit) / 1.5);
   --quarterunit: calc(var(--unit) / 4);
   --eighthunit: calc(var(--unit) / 8);
-  --elwidth: calc(100vw - var(--doubleunit));
+  --elwidth: calc(100svw - var(--doubleunit));
   --navheight: var(--halfunit);
   --nav_padding_bottom: calc(var(--halfunit) * 0.1);
   --main_margin_top: calc(var(--unit) + var(--navheight));
-  --intro_height: calc(100vh - (var(--unit) * 2 + var(--navheight)));
+  --intro_height: calc(100svh - (var(--unit) * 2 + var(--navheight)));
   --img_container_width: calc((var(--elwidth) - var(--unit)) / 3);
   --container_background: rgba(255,255,255,0.5);
   --sig_height: calc(var(--halfunit) - 2rem);
@@ -96,7 +96,7 @@ body{
   margin: 0;
   background: repeating-linear-gradient(
     to right, var(--bg_gradient_colors));
-  width: 100vw;
+  width: 100svw;
 }
 
 @keyframes waveShift {
@@ -159,7 +159,7 @@ body::before{
 .link{
   transition: transform 0.5s ease;
   color: red;
-  margin-left: 4vw;
+  margin-left: 4svw;
   white-space: nowrap;
   display: inline-block;
 }
@@ -214,10 +214,10 @@ main{
   height: calc(100svh - var(--navheight));
   margin-top: var(--navheight);
   width: 100svw;
-  filter: grayscale(100);
-  transition: filter 0.5s ease;
   object-fit: cover;
   object-position: 22% 50%;
+  filter: grayscale(100);
+  transition: filter 0.5s ease;
 }
 .intro_image img:hover{
   filter: grayscale(0);
@@ -799,7 +799,7 @@ img[class="projectimg"]{
   }
   .links.hamburger.long .link{
     margin-left: 0;
-    margin-right: 4vw;
+    margin-right: 4svw;
   }
 
   #hamtoggle:checked + #hamicon .hamline:nth-child(1){
@@ -972,7 +972,13 @@ img[class="projectimg"]{
     width: 1.3rem;
   }
   .contact{
-    height: 100svh;
+    border: 1px solid transparent;
+  }
+  .credits_contact{
+    color: red;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
   }
 }
 
@@ -994,6 +1000,15 @@ img[class="projectimg"]{
 }
 
 @media (pointer: coarse) and (hover: none){
+  .introclosetext a, .contactclosetext a{
+    animation: shiftleft 5s infinite;
+  }
+  .introclosetext a:nth-of-type(2){
+    animation: shiftright 5s infinite;
+  }
+  .intro_image img{
+    filter: grayscale(0);
+  }
   .grid-item img{
     filter: grayscale(0);
   }
@@ -1027,13 +1042,6 @@ img[class="projectimg"]{
   #envelope-shape{
     animation: scale 5s ease-in-out infinite;
   }
-  .introclosetext a, .contactclosetext a{
-    animation: shiftleft 5s infinite;
-  }
-  .introclosetext a:nth-of-type(2){
-    animation: shiftright 5s infinite;
-  }
-
   .link:active{
     transform: scale(1.15);
     font-weight: bold;
