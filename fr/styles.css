@@ -1100,7 +1100,7 @@ img[class="projectimg"]{
   .introclosetext a:nth-of-type(2){
     animation: shiftright 5s infinite;
   }
-  .intro_image img{
+  .coverimage img{
     filter: grayscale(0);
   }
   .grid-item img{
