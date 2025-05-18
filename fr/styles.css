@@ -88,6 +88,14 @@ h3{
   font-size: 1.4em;
 }
 
+.ita{
+  margin-bottom: var(--eighthunit);
+}
+
+ul{
+  margin: var(--eighthunit) 0;
+}
+
 ul:last-of-type{
   margin-bottom: 0;
 }
@@ -209,7 +217,7 @@ main{
 
 .intro{
   width: var(--elwidth);
-  margin: calc(var(--navheight) * -1 - var(--introtopdiscrepancy)) auto var(--unit) auto; 
+  margin: calc(var(--navheight) * -1 - var(--introtopdiscrepancy)) auto var(--doubleunit) auto; 
   height: var(--intro_height);
   display: flex;
   position: relative;
@@ -326,7 +334,7 @@ main{
   margin: 0 auto;
 }
 .section:not(:last-of-type){
-  margin-bottom: var(--unit);
+  margin-bottom: var(--eighthunit);
 }
 
 .section-item{
@@ -345,9 +353,34 @@ main{
 .section-item.image:hover{
   filter: grayscale(0);
 }
+.section-item.image.evens{
+  display: none;
+}
 
-.good-mention li::marker{
+.less-margin-bottom{
+  margin-bottom: calc(var(--eighthunit) / 8);
+}
+.good-mention{
+  margin-top: calc(var(--eighthunit) / 8);
+}
+.good-mention::marker{
   color: red;
+}
+.good-mention + p{
+  margin-top: var(--eighthunit);
+}
+
+.divider{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.divider img{
+  height: var(--unit);
+  width: var(--unit);
+}
+.divider.bottom{
+  margin: 0 auto var(--doubleunit) 0;
 }
 
 #maintools *{
@@ -632,8 +665,11 @@ img[class="projectimg"]{
   .section-item .content-wrapper{
     font-size: 1.1rem;
   }
-  .section-item.image.last{
+  .section-item.image.odds{
     display: none;
+  }
+  .section-item.image.evens{
+    display: flex;
   }
 }
 
@@ -734,7 +770,7 @@ img[class="projectimg"]{
     --unit: 8svh;
   }
   .title, .title span{
-    line-height: 1.17rem;
+    line-height: 1.165rem;
   }
 
   @keyframes waveShift {
@@ -914,7 +950,7 @@ img[class="projectimg"]{
   .section-item:not(#maintools .section-item){
     height: fit-content;
   }
-  .section-item.image.last{
+  .section-item.image.odds{
     display: flex;
   }
   .grid-container{
@@ -941,6 +977,9 @@ img[class="projectimg"]{
   }
   .header h1, .header h2{
     font-size: 2em;
+  }
+  .title, .title span{
+    line-height: 1.23rem;
   }
   .title.long{
     display: none;
@@ -995,6 +1034,8 @@ img[class="projectimg"]{
   .contact_body{
     border: 1px solid transparent;
     position: relative;
+    height: fit-content;
+    min-height: 100svh;
   }
   .credits.contact.short{
     display: inline-block;
@@ -1015,8 +1056,8 @@ img[class="projectimg"]{
     right: var(--eighthunit);
   }
   .title, .title span{
-    font-size: 1.5rem;
-    line-height: 1.15rem;
+    font-size: 1.8rem;
+    line-height: 1.37rem;
   }
   .link{
     font-size: 1rem;
