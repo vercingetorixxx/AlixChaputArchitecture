@@ -215,15 +215,7 @@ main{
 /* ------------ABOUT------------ */
 
 
-.intro{
-  width: var(--elwidth);
-  margin: calc(var(--navheight) * -1 - var(--introtopdiscrepancy)) auto var(--doubleunit) auto; 
-  height: var(--intro_height);
-  display: flex;
-  position: relative;
-}
-
-.intro_image img{
+.coverimage img{
   height: calc(100svh - var(--navheight));
   margin-top: var(--navheight);
   width: 100svw;
@@ -232,10 +224,17 @@ main{
   filter: grayscale(100);
   transition: filter 0.5s ease;
 }
-.intro_image img:hover{
+.coverimage img:hover{
   filter: grayscale(0);
 }
 
+.intro{
+  width: var(--elwidth);
+  margin: calc(var(--navheight) * -1 - var(--introtopdiscrepancy)) auto var(--doubleunit) auto; 
+  height: var(--intro_height);
+  display: flex;
+  position: relative;
+}
 
 #imgcontainer{
   width: var(--img_container_width);
@@ -366,8 +365,21 @@ main{
 .good-mention::marker{
   color: red;
 }
-.good-mention + p{
+.good-mention + div{
   margin-top: var(--eighthunit);
+}
+
+.desc-item{
+  display: flex;
+}
+.desc-date{
+  width: fit-content;
+  text-align: end;
+}
+.desc-txt{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .divider{
