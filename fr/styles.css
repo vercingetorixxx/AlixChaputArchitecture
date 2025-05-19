@@ -402,7 +402,7 @@ main{
   margin-bottom: calc(var(--eighthunit) / 8);
 }
 .addon{
-  margin-top: calc(var(--eighthunit) / 8);
+  margin-top: calc(var(--eighthunit) / 2);
 }
 .good-mention::marker{
   color: red;
@@ -411,8 +411,15 @@ main{
   margin-top: var(--eighthunit);
 }
 
+li:not(last-of-type){
+  margin-bottom: calc(var(--eighthunit) / 2);
+}
+
 .desc-item{
   display: flex;
+}
+.desc-item.edu{
+  margin-top: var(--quarterunit);
 }
 .desc-date{
   width: fit-content;
@@ -480,7 +487,7 @@ main{
   margin-right: var(--halfunit);
   padding: var(--halfunit);
   background: var(--container_background);
-  min-width: --longleft_minwidth;
+  min-width: var(--longleft_minwidth);
   height: fit-content;
   max-height: var(--item_maxheight);
   display: flex;
@@ -636,14 +643,16 @@ textarea{
   margin-bottom: var(--halfunit);
 }
 
-.longform.project h1{
-  font-size: 1.7em;
-  margin-bottom: var(--eighthunit);
-}
-
 .longform.project h2{
   font-size: 1.3em;
   margin-bottom: var(--eighthunit);
+}
+
+.longleft.project .bold{
+  text-align: end;
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
 }
 
 .longform.content-wrapper{
@@ -1154,6 +1163,13 @@ img[class="projectimg"]{
   }
   .form-item.header{
     margin-bottom: calc(var(--eighthunit) * -1.5);
+  }
+}
+
+@media (max-width: 900px) and (min-width: 600px){
+  .longleft.project .bold{
+    justify-content: start;
+    margin-left: 1.6rem;
   }
 }
 
