@@ -1062,7 +1062,7 @@ img[class="projectimg"]{
   }
   #signature{
     bottom: none;
-    right: 0.25rem;
+    right: -0.4rem;
     top: calc(100% + 0.5rem);
   }
 }
