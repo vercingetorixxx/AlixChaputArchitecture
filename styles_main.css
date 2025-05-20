@@ -5,28 +5,28 @@
 
 @font-face {
     font-family: 'dinpro';
-    src: url('../dinpro/dinpro-light.ttf') format('truetype');
+    src: url('./dinpro/dinpro-light.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
   font-family: 'dinpro';
-  src: url('../dinpro/dinpro-medium.ttf') format('truetype');
+  src: url('./dinpro/dinpro-medium.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'dinpro';
-  src: url('../dinpro/dinpro-bold.ttf') format('truetype');
+  src: url('./dinpro/dinpro-bold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'dinpro';
-  src: url('../dinpro/dinpro-black.ttf') format('truetype');
+  src: url('./dinpro/dinpro-black.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
