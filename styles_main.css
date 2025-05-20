@@ -39,7 +39,7 @@
 }
 
 body{
-    background: white;
+    background-color: white;
     height: 100vh;
     width: 100vw;
     position: relative;
@@ -65,7 +65,7 @@ body{
     width: 28.57rem;
     height: 3rem;
     z-index: 1;
-    background: white;
+    background-color: white;
     animation: moveright 2s cubic-bezier(.25,.96,.85,0);
     left: calc(50% + 28.57rem);
 }
@@ -113,5 +113,17 @@ body{
     width: 16.2rem;
     left: calc(50% + 16.2rem);
     animation: moveright 2s cubic-bezier(0,.48,1,0);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body{
+    background-color: #1A1A1A;
+  }
+  .concealer{
+    background-color: #1A1A1A;
+  }
+  .title, .title span{
+    color: #FF3366;
   }
 }
