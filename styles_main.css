@@ -45,6 +45,15 @@ body{
     position: relative;
 }
 
+.title{
+  width: 100%;
+  text-align: center;
+}
+
+.title.short{
+  display: none;
+}
+
 .title, .concealer{
     position: absolute;
     top: 50%;
@@ -69,4 +78,40 @@ body{
 
 .bold{
     font-weight: bold;
+}
+
+@media (max-width: 800px){
+  .title .ghost{
+    display: none;
+  }
+  .concealer{
+    animation: moveright 2s cubic-bezier(0,.9,1,0);
+  }
+}
+
+@media (max-width: 575px){
+  .title.long{
+    display: none;
+  }
+  .title.short{
+    display: inline-block;
+  }
+  .concealer{
+    animation: moveright 2s cubic-bezier(0,.64,1,0);
+  }
+}
+
+@media (max-width: 450px){
+  @keyframes moveright{
+    0% { transform: translate(-50%, -50%) translateX(-16.2rem); }
+    100% { transform: translate(-50%, -50%) translateX(0em); }
+  } 
+  .title, .title span{
+    font-size: 1.5rem;
+  }
+  .concealer{
+    width: 16.2rem;
+    left: calc(50% + 16.2rem);
+    animation: moveright 2s cubic-bezier(0,.48,1,0);
+  }
 }
