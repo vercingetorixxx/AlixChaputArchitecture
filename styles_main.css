@@ -1,0 +1,72 @@
+@keyframes moveright{
+  0% { transform: translate(-50%, -50%) translateX(-28.57rem); }
+  100% { transform: translate(-50%, -50%) translateX(0em); }
+} 
+
+@font-face {
+    font-family: 'dinpro';
+    src: url('../dinpro/dinpro-light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'dinpro';
+  src: url('../dinpro/dinpro-medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dinpro';
+  src: url('../dinpro/dinpro-bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dinpro';
+  src: url('../dinpro/dinpro-black.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+*{
+    font-family: dinpro, Arial;
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+body{
+    background: white;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.title, .concealer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.concealer{
+    width: 28.57rem;
+    height: 3rem;
+    z-index: 1;
+    background: white;
+    animation: moveright 2s cubic-bezier(.25,.96,.85,0);
+    left: calc(50% + 28.57rem);
+}
+
+.title, .title span{
+    font-size: 2rem;
+    line-height: 1.65rem;
+    color: red;
+}
+
+.bold{
+    font-weight: bold;
+}
