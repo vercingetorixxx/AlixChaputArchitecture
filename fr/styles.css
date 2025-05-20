@@ -197,6 +197,7 @@ body::before{
 .title, .title span{
   font-size: 2rem;
   line-height: 1.65rem;
+  color: red;
 }
 
 .title.short{
@@ -1054,7 +1055,7 @@ img[class="projectimg"]{
 
 @media (max-width: 650px) or (max-aspect-ratio: 1/3){
   :root{
-    --sig_height: calc(var(--halfunit) * 2);
+    --sig_height: min(calc(var(--halfunit) * 2), 2.7rem);
   }
   .introclosetext.short{
     display: none;
@@ -1087,6 +1088,9 @@ img[class="projectimg"]{
   }
   .credits, .credits *{
     font-size: 1rem;
+  }
+  .navtext{
+    justify-content: start;
   }
   .title, .title span{
     line-height: 1.23rem;

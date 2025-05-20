@@ -2,14 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=fr/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Alix Chaput Architecture</title>
+    <meta http-equiv="refresh" content="5; url=fr/index.html">
     <title>Alix Chaput Architecture</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico"/>
+    <link href="styles_main.css" rel="stylesheet">
     <script>
-        window.location.href = "fr/index.html";
+        document.getElementById("meta-refresh").remove(); // Remove meta refresh if JavaScript is enabled
+        setTimeout(function() {
+            window.location.href = "fr/index.html";
+        }, 5000); // 3000 milliseconds = 3 seconds
     </script>
 </head>
 <body>
-    <p>Redirection vers la version française... Si vous n'êtes pas redirigé, <a href="fr/index.html">cliquez ici</a>.</p>
+    <div class="concealer"></div>
+    <a href="fr/index.html"><div class="title"><span class="bold">ALIX CHAPUT</span> | ARCHITECTURE</div></a>
 </body>
 </html>
