@@ -229,7 +229,6 @@ body::before{
 
 .name{
   font-family: fenwick;
-  animation: glow2 2s ease-in-out infinite alternate;
 }
 
 .hamburger{
@@ -435,9 +434,6 @@ main{
 .header h1, .header h2{
   font-family: fenwick;
   font-size: 3.5em;
-}
-.header h1{
-  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .content-wrapper{
