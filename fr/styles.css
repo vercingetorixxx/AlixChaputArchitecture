@@ -1428,7 +1428,7 @@ iframe{
   background-color: white;
 }
 
-.darkmode :where(.mainnav, .hamburger){
+.darkmode :is(.mainnav, .hamburger){
   background-color: #1A1A1A;
   color: #FF3366;
   border-bottom: 2px solid #FF3366;
