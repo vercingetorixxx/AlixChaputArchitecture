@@ -1,6 +1,10 @@
 @keyframes moveright{
-  0% { transform: translate(-50%, -50%); }
-  100% { transform: translate(-50%, -50%); }
+  0% { transform: translate(-50%, -50%) scaleX(1); 
+    transform-origin: right;}
+  40% { transform: translate(-50%, -50%) scaleX(0); 
+    transform-origin: right;}
+  100% { transform: translate(-50%, -50%) scaleX(0); 
+    transform-origin: right;}
 } 
 
 @font-face {
