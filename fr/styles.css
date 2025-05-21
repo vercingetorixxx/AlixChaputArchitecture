@@ -1353,6 +1353,21 @@ iframe{
 
 .darkmode{
   color: #D3D3D3;
+  --bg_gradient_colors: 
+    rgb(100, 90, 110) 0%,
+    rgb(80, 100, 120) 20%,
+    rgb(120, 120, 100) 50%,
+    rgb(140, 90, 110) 80%,
+    rgb(100, 90, 110) 100%;
+  --container_background: rgba(0,0,0,0.5);
+}
+.darkmode::before{
+  --bg_gradient_colors: 
+    rgb(100, 90, 110) 0%,
+    rgb(80, 100, 120) 20%,
+    rgb(120, 120, 100) 50%,
+    rgb(140, 90, 110) 80%,
+    rgb(100, 90, 110) 100%;
 }
 
 .darkmode :where(button){
@@ -1409,6 +1424,25 @@ iframe{
 
 /* ---------- LIGHTMODE ---------- */
 
+.lightmode{
+  color: #D3D3D3;
+  --bg_gradient_colors: 
+    rgb(225, 216, 230) 0%,
+    rgb(210, 230, 240) 20%,
+    rgb(240, 240, 220) 50%,
+    rgb(255, 220, 230) 80%,
+    rgb(225, 216, 230) 100%;
+    --container_background: rgba(255,255,255,0.5);
+}
+.lightmode::before{
+  --bg_gradient_colors: 
+    rgb(225, 216, 230) 0%,
+    rgb(210, 230, 240) 20%,
+    rgb(240, 240, 220) 50%,
+    rgb(255, 220, 230) 80%,
+    rgb(225, 216, 230) 100%;
+}
+
 .lightmode *{
   color: black;
 }
@@ -1442,7 +1476,7 @@ iframe{
 }
 
 .lightmode :where(#envelope-shape, .hamicon .hamline){
-  background-color: red;
+  background-color: red !important;
 }
 
 .lightmode :where(input, textarea){
