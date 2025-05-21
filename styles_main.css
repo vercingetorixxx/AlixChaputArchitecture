@@ -31,6 +31,13 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family: 'fenwick';
+  src: url('./fenwick/fenwick_outline.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 *{
     font-family: dinpro, Arial;
     box-sizing: border-box;
@@ -66,7 +73,7 @@ body{
     height: 3rem;
     z-index: 1;
     background-color: white;
-    animation: moveright 2s cubic-bezier(.25,.96,.85,0);
+    animation: moveright 4s linear;
     left: calc(50% + 28.57rem);
 }
 
@@ -76,8 +83,8 @@ body{
     color: red;
 }
 
-.bold{
-    font-weight: bold;
+.name{
+    font-family: fenwick;
 }
 
 @media (max-width: 800px){
@@ -125,5 +132,12 @@ body{
   }
   .title, .title span{
     color: #FF3366;
+  }
+}
+
+@supports(height: 1svh){
+  body{
+    height: 100svh;
+    width: 100svw;
   }
 }

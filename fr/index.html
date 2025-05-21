@@ -10,36 +10,34 @@
 
 <body>
 
-  <nav id="mainnav" aria-label="Main navigation">
+  <nav class="mainnav" aria-label="Main navigation">
     <div class="navtext">
-      <a href="../index.html" class="title long"><div class="title long"><span class="bold">ALIX CHAPUT</span> <span class="ghost">| </span>ARCHITECTURE</div></a>
-      <a href="../index.html" class="title short"><div class="title short"><span class="bold">ALIX C.</span> ARCHITECTURE</div></a>
+      <a href="../index.html" class="title long"><div class="title long"><span class="name">ALIX CHAPUT</span> <span class="ghost">| </span>ARCHITECTURE</div></a>
+      <a href="../index.html" class="title short"><div class="title short"><span class="name">ALIX C.</span> ARCHITECTURE</div></a>
       <div class="links main">
         <a class="link" href="index.html">À PROPOS</a>
         <a class="link" href="projects.html">PROJETS</a>
         <a class="link" href="contact.html">ME CONTACTER</a>
+        <a class="link" href="../en/index.html" alt="English"><img src="../images/UK.webp"></a>
+        <button class="link" id="dark-mode-toggle"></button>
+        <button class="link" id="light-mode-toggle"></button>
       </div>
     </div>
-    <a class="language long" href="../en/index.html" alt="English"><img src="../images/UK.webp"></a>
   </nav>
 
   <input id="hamtoggle" type="checkbox" style="display: none">
-  <label id="hamicon" for="hamtoggle">
+  <label class="hamicon" for="hamtoggle">
     <div class="hamline"></div><div class="hamline"></div><div class="hamline"></div>
   </label>
-  <nav id="hamburger" aria-label="Small-screen navigation">
+  <nav class="hamburger" aria-label="Small-screen navigation">
     <div class="navtext">
-      <div class="links hamburger long">
+      <div class="links hamburger">
         <a class="link" href="index.html">À PROPOS</a>
         <a class="link" href="projects.html">PROJETS</a>
-        <a class="link" href="contact.html">ME CONTACTER</a>
-        <a class="language short" href="../en/index.html" alt="English"><img src="../images/UK.webp"></a>
-      </div>
-      <div class="links hamburger short">
-        <a class="link" href="index.html">À PROPOS</a><div>&nbsp;&nbsp;|&nbsp;&nbsp;</div
-          ><a class="link" href="projects.html">PROJETS</a><div>&nbsp;&nbsp;|&nbsp;&nbsp;</div
-          ><a class="link" href="contact.html">ME CONTACTER</a><div>&nbsp;&nbsp;|&nbsp;&nbsp;</div
-          ><a class="language short" href="../en/index.html" alt="English"><img src="../images/UK.webp"></a>
+        <a class="link" href="contact.html"><div class="longtext">ME CONTACTER</div><div class="shorttext">CONTACT</div></a>
+        <a class="link" href="../en/index.html" alt="English"><img src="../images/UK.webp"></a>
+        <button class="link" id="dark-mode-toggle"></button>
+        <button class="link" id="light-mode-toggle"></button>
       </div>
     </div>
   </nav>
@@ -50,15 +48,15 @@
 
   <div class="startend start">
     <div class="divider left">
-        <img class="lightmode" src="../images/asterisk.webp">
-      <img class="darkmode" src="../images/dark_icons/asterisk.webp">
+        <img class="divider-lightmode" src="../images/asterisk.webp">
+      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
     </div>
     <div class="header">
       <h1>À PROPOS DE MOI</h1>
     </div>
     <div class="divider right">
-        <img class="lightmode" src="../images/asterisk.webp">
-      <img class="darkmode" src="../images/dark_icons/asterisk.webp">
+        <img class="divider-lightmode" src="../images/asterisk.webp">
+      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
     </div>
   </div>
 
@@ -96,8 +94,8 @@
           </div>
         </div>
       </div>
-      <img id="signature" class="lightmode" src="../images/signature.webp" alt="Signature"/>
-      <img id="signature" class="darkmode" src="../images/dark_icons/signature_dark.webp" alt="Signature"/>
+      <img id="signature" class="divider-lightmode" src="../images/signature.webp" alt="Signature"/>
+      <img id="signature" class="divider-darkmode" src="../images/dark_icons/signature_dark.webp" alt="Signature"/>
       <div class="introclosetext long">
         <span class="bold"><a href="../images/CV.pdf" target="_blank" alt="CV">Télécharger mon CV</a><div>&nbsp;&nbsp;|&nbsp;&nbsp;</div
           ><a href="https://www.calameo.com/read/007726246e14353561d75" target="_blank" alt="Portfolio">Voir mon Portfolio</a></span>
@@ -111,17 +109,13 @@
           ><a href="https://www.calameo.com/read/007726246e14353561d75" target="_blank" alt="Portfolio">Portfolio</a></span>
       </div>
     </div>
-    <div class="divider bottom">
-      <img class="lightmode" src="../images/asterisk.webp">
-      <img class="darkmode" src="../images/dark_icons/asterisk.webp">
-    </div>
 
     <div class="divider">
-      <img class="lightmode" src="../images/asterisk.webp">
-      <img class="darkmode" src="../images/dark_icons/asterisk.webp">
+      <img class="divider-lightmode" src="../images/asterisk.webp">
+      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
     </div>
     <div class="header">
-      <h2>EXPERIENCE PRO</h2>
+      <h2>EXPÉRIENCE PROFESSIONELLE</h2>
     </div>
     <div class="section">
       <div class="section-item">
@@ -141,7 +135,7 @@
         </div>
       </div>
       <div class="section-item image">
-        <img src="../images/placeholder.webp"/>
+        <img src="../images/section-items/jobsection1.webp"/>
       </div>
       <div class="section-item">
         <div class="content-wrapper">
@@ -159,7 +153,7 @@
         </div>
       </div>
       <div class="section-item image">
-        <img src="../images/placeholder.webp"/>
+        <img src="../images/section-items/jobsection2.webp"/>
       </div>
       <div class="section-item">
         <div class="content-wrapper">
@@ -176,7 +170,7 @@
         </div>
       </div>
       <div class="section-item image">
-        <img src="../images/placeholder.webp"/>
+        <img src="../images/section-items/jobsection3.webp"/>
       </div>
       <div class="section-item">
         <div class="content-wrapper">
@@ -193,7 +187,7 @@
         </div>
       </div>
       <div class="section-item image odds">
-        <img src="../images/placeholder.webp"/>
+        <img src="../images/section-items/jobsection4.webp"/>
       </div>
       <div class="section-item">
         <div class="content-wrapper">
@@ -210,21 +204,17 @@
         </div>
       </div>
     </div>
-    <div class="divider bottom">
-      <img class="lightmode" src="../images/asterisk.webp">
-      <img class="darkmode" src="../images/dark_icons/asterisk.webp">
-    </div>
 
     <div class="divider">
-      <img class="lightmode" src="../images/asterisk.webp">
-      <img class="darkmode" src="../images/dark_icons/asterisk.webp">
+      <img class="divider-lightmode" src="../images/asterisk.webp">
+      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
     </div>
     <div class="header">
       <h2>FORMATION & DIPLÔMES</h2>
     </div>
     <div class="section">
       <div class="section-item image odds">
-        <img src="../images/placeholder.webp"/>
+        <img src="../images/section-items/degreesection1.webp"/>
       </div>
       <div class="section-item">
         <div class="content-wrapper">
@@ -243,11 +233,17 @@
           </div>
         </div>
       </div>
-      <div class="section-item image">
-        <img src="../images/placeholder.webp"/>
+      <div class="section-item image odds">
+        <img src="../images/section-items/degreesection3.webp"/>
       </div>
-      <div class="section-item image multiples">
-        <img src="../images/placeholder.webp"/>
+      <div class="section-item image evens multiples">
+        <img src="../images/section-items/degreesection1.webp">
+      </div>
+      <div class="section-item image multiples odds">
+        <img src="../images/section-items/degreesection4.webp"/>
+      </div>
+      <div class="section-item image evens multiples">
+        <img src="../images/section-items/degreesection2.webp">
       </div>
       <div class="section-item">
         <div class="content-wrapper">
@@ -264,17 +260,13 @@
         </div>
       </div>
       <div class="section-item image odds">
-        <img src="../images/placeholder.webp"/>
+        <img src="../images/section-items/degreesection2.webp"/>
       </div>
-    </div>
-    <div class="divider bottom">
-      <img class="lightmode" src="../images/asterisk.webp">
-      <img class="darkmode" src="../images/dark_icons/asterisk.webp">
     </div>
 
     <div class="divider">
-      <img class="lightmode" src="../images/asterisk.webp">
-      <img class="darkmode" src="../images/dark_icons/asterisk.webp">
+      <img class="divider-lightmode" src="../images/asterisk.webp">
+      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
     </div>
     <div class="header">
       <h2>OUTILS PRINCIPAUX</h2>
@@ -282,48 +274,48 @@
     <div class="section" id="maintools">
       <div class="section-item">
         <div class="content-wrapper">
-          <img class="lightmode" src="../images/icons/icon_revit.webp"/>
-          <img class="darkmode" src="../images/dark_icons/revit.webp"/>
+          <img class="divider-lightmode" src="../images/icons/icon_revit.webp"/>
+          <img class="divider-darkmode" src="../images/dark_icons/revit.webp"/>
           <h3>REVIT</h3>
           <div class="si-content">Responsable de projet BIM</div>
         </div>
       </div>
       <div class="section-item">
         <div class="content-wrapper">
-          <img class="lightmode" src="../images/icons/icon_autocad.webp"/>
-          <img class="darkmode" src="../images/dark_icons/autocad.webp"/>
+          <img class="divider-lightmode" src="../images/icons/icon_autocad.webp"/>
+          <img class="divider-darkmode" src="../images/dark_icons/autocad.webp"/>
           <h3>AUTOCAD</h3>
           <div class="si-content">Conception de projets toutes phases</div>
         </div>
       </div>
       <div class="section-item">
         <div class="content-wrapper">
-          <img class="lightmode" src="../images/icons/icon_twinmotion.webp"/>
-          <img class="darkmode" src="../images/dark_icons/twinmotion.webp"/>
+          <img class="divider-lightmode" src="../images/icons/icon_twinmotion.webp"/>
+          <img class="divider-darkmode" src="../images/dark_icons/twinmotion.webp"/>
           <h3>TWINMOTION</h3>
           <div class="si-content">Conception de visuels de projet</div>
         </div>
       </div>
       <div class="section-item">
         <div class="content-wrapper">
-          <img class="lightmode" src="../images/icons/icon_illustrator.webp"/>
-          <img class="darkmode" src="../images/dark_icons/illustrator.webp"/>
+          <img class="divider-lightmode" src="../images/icons/icon_illustrator.webp"/>
+          <img class="divider-darkmode" src="../images/dark_icons/illustrator.webp"/>
           <h3>ILLUSTRATOR</h3>
           <div class="si-content">Graphisme et dessin vectoriel</div>
         </div>
       </div>
       <div class="section-item">
         <div class="content-wrapper">
-          <img class="lightmode" src="../images/icons/icon_photoshop.webp"/>
-          <img class="darkmode" src="../images/dark_icons/photoshop.webp"/>
+          <img class="divider-lightmode" src="../images/icons/icon_photoshop.webp"/>
+          <img class="divider-darkmode" src="../images/dark_icons/photoshop.webp"/>
           <h3>PHOTOSHOP</h3>
           <div class="si-content">Post-production et retouche d'image</div>
         </div>
       </div>
       <div class="section-item">
         <div class="content-wrapper">
-          <img class="lightmode" src="../images/icons/icon_indesign.webp"/>
-          <img class="darkmode" src="../images/dark_icons/indesign.webp"/>
+          <img class="divider-lightmode" src="../images/icons/icon_indesign.webp"/>
+          <img class="divider-darkmode" src="../images/dark_icons/indesign.webp"/>
           <h3>INDESIGN</h3>
           <div class="si-content">Supports de communication projet</div>
         </div>
@@ -334,16 +326,19 @@
 
   <div class="startend">
     <div class="divider left">
-        <img class="lightmode" src="../images/asterisk.webp">
-      <img class="darkmode" src="../images/dark_icons/asterisk.webp">
+        <img class="divider-lightmode" src="../images/asterisk.webp">
+      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
     </div>
     <div class="credits">
       Site Web par <span class="bold">Chanwu Oh</span>
     </div>
     <div class="divider right">
-        <img class="lightmode" src="../images/asterisk.webp">
-      <img class="darkmode" src="../images/dark_icons/asterisk.webp">
+        <img class="divider-lightmode" src="../images/asterisk.webp">
+      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
     </div>
   </div>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
