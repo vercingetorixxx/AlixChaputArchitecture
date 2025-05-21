@@ -163,7 +163,7 @@ body{
 .darkmode :where(.concealer){
   background-color: #1A1A1A;
 }
-.darkmode :where(.title, .title span){
+.darkmode :is(.title, .title span){
   color: #FF3366;
 }
 .darkmode .name{

@@ -1438,7 +1438,7 @@ iframe{
   background-color: #1A1A1A;
 }
 
-.darkmode :where(.title, .title span, .link, 
+.darkmode :is(.title, .title span, .link, 
 .link div, #introtext p:first-of-type::first-letter,
 .good-mention::marker){
     color: #FF3366;
@@ -1455,12 +1455,16 @@ iframe{
 .darkmode :is(.header h1){
   animation: glow1 1.5s ease-in-out infinite alternate;
 }
-.darkmode :where(.name){
+.darkmode :is(.name){
   animation: glow2 1.5s ease-in-out infinite alternate;
 }
 
-.darkmode :where(#envelope-shape, .hamicon .hamline){
+.darkmode :is(#envelope-shape, .hamicon .hamline){
   background-color: #FF3366;
+}
+
+.darkmode :is(input){
+  color: #D3D3D3;
 }
 
 .darkmode :where(input, textarea){
