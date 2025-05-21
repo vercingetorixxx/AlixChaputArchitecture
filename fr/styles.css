@@ -1424,7 +1424,7 @@ iframe{
     rgb(100, 90, 110) 100%;
 }
 
-.darkmode :where(button){
+.darkmode :is(button){
   background-color: white;
 }
 
