@@ -248,7 +248,7 @@ button.link{
   margin-bottom: calc(var(--navbar_vertical_discrepancy) * -1);
 }
 
-#light-mode-toggle{
+.light-mode-toggle{
   display: none;
 }
 
@@ -270,7 +270,7 @@ main{
 }
 
 .hidden{
-  transform: translateY(-100%);
+  transform: translateY(calc(-1 * var(--navheight)));
 }
 
 /* ------------ABOUT------------ */
@@ -891,10 +891,10 @@ iframe{
     display: inline-block;
   }
 
-  .links.hamburger{
+  .links.hamburger_link{
     justify-content: flex-start;
   }
-  .links.hamburger .link{
+  .links.hamburger_link .link{
     margin-left: 0;
     margin-right: var(--link_margin);
   }
@@ -1341,10 +1341,10 @@ iframe{
     display: inline-block;
   }
 
-  #dark-mode-toggle{
+  .dark-mode-toggle{
     display: none;
   }
-  #light-mode-toggle{
+  .light-mode-toggle{
     display: inline-block;
   }
 }
@@ -1362,7 +1362,11 @@ iframe{
 .darkmode :where(.mainnav, .hamburger){
   background-color: #1A1A1A;
   color: #FF3366;
-  border-bottom: 2px solid #FF3366;
+  border-bottom: 2px solid #FF3366 !important;
+}
+
+.darkmode :where(.hamburger *){
+  background-color: #1A1A1A;
 }
 
 .darkmode :where(.title, .title span, .link, 
@@ -1380,7 +1384,7 @@ iframe{
 }
 
 .darkmode :where(#envelope-shape, .hamicon .hamline){
-  background-color: #FF3366;
+  background-color: #FF3366 !important;
 }
 
 .darkmode :where(input, textarea){
@@ -1417,6 +1421,10 @@ iframe{
   background-color: white;
   color: red;
   border-bottom: 2px solid red;
+}
+
+.lightmode :where(.hamburger *){
+  background-color: white;
 }
 
 .lightmode :where(.title, .title span, .link, 
