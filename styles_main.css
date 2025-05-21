@@ -1,6 +1,6 @@
 @keyframes moveright{
-  0% { transform: translate(-50%, -50%) translateX(-28.57rem); }
-  100% { transform: translate(-50%, -50%) translateX(0em); }
+  0% { transform: translate(-50%, -50%); }
+  100% { transform: translate(-50%, -50%); }
 } 
 
 @font-face {
@@ -39,18 +39,18 @@
 }
 
 *{
-    font-family: dinpro, Arial;
-    box-sizing: border-box;
-    margin: 0;
-    font-size: 1.1rem;
+  font-family: dinpro, Arial;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 1.1rem;
 }
 
 body{
-    background-color: white;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    overflow: hidden;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
 }
 
 .title{
@@ -63,29 +63,29 @@ body{
 }
 
 .title, .concealer{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .concealer{
-    width: 28.57rem;
-    height: 3rem;
-    z-index: 1;
-    background-color: white;
-    animation: moveright 4s linear;
-    left: calc(50% + 28.57rem);
+  width: 28.57rem;
+  height: 3rem;
+  z-index: 1;
+  background-color: white;
+  animation: moveright 10s linear;
+  left: 50%;
 }
 
 .title, .title span{
-    font-size: 2rem;
-    line-height: 1.65rem;
-    color: red;
+  font-size: 2rem;
+  line-height: 1.65rem;
+  color: red;
 }
 
 .name{
-    font-family: fenwick;
+  font-family: fenwick;
 }
 
 @media (max-width: 800px){
@@ -105,15 +105,19 @@ body{
 
 @media (max-width: 450px){
   @keyframes moveright{
-    0% { transform: translate(-50%, -50%) translateX(-16.2rem); }
-    100% { transform: translate(-50%, -50%) translateX(0em); }
+    0% { transform: translate(-50%, -50%) scaleX(1); 
+      transform-origin: right;}
+    40% { transform: translate(-50%, -50%) scaleX(0); 
+      transform-origin: right;}
+    100% { transform: translate(-50%, -50%) scaleX(0); 
+      transform-origin: right;}
   } 
   .title, .title span{
     font-size: 1.5rem;
   }
   .concealer{
     width: 16.2rem;
-    left: calc(50% + 16.2rem);
+    left: 50%;
   }
 }
 
@@ -133,5 +137,26 @@ body{
   body{
     height: 100svh;
     width: 100svw;
+    overflow: hidden;
   }
+}
+
+.darkmode{
+  background-color: #1A1A1A;
+}
+.darkmode :where(.concealer){
+  background-color: #1A1A1A;
+}
+.darkmode :where(.title, .title span){
+  color: #FF3366;
+}
+
+.lightmode{
+  background-color: white;
+}
+.lightmode :where(.concealer){
+  background-color: white;
+}
+.lightmode :where(.title, .title span){
+  color: red !important;
 }
