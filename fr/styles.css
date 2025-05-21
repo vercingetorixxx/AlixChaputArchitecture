@@ -11,7 +11,7 @@
   --intro_height: calc(100vh - (var(--unit) * 2 + var(--navheight)));
   --img_container_width: calc((var(--elwidth) - var(--unit)) / 3);
   --container_background: rgba(255,255,255,0.5);
-  --sig_height: calc(var(--halfunit) - 1rem);
+  --sig_height: calc(var(--halfunit));
   --sig_width: calc(var(--sig_height) * 2.73);
   --item_maxheight: calc(100vh - (var(--unit) * 3));
   --sectionitem_height: calc((var(--elwidth) - var(--halfunit)) / 3);
@@ -88,6 +88,13 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family: 'bahnschrift';
+  src: url('../Bahnschrift/BAHNSCHRIFT.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 *{
   font-family: dinpro, Arial;
   font-feature-settings: "liga" 0, "dlig" 0, "calt" 0;
@@ -160,6 +167,23 @@ body{
   100% { transform: translateX(0em); }
 } 
 
+@keyframes glow1 {
+  from {
+    text-shadow: 0 0 3px #FF3366, 0 0 6px #FF3366, 0 0 9px #FFC2CC;
+  }
+  to {
+    text-shadow: 0 0 9px #FF3366, 0 0 12px #FFC2CC, 0 0 16px #FFC2CC, 0 0 20px #FFC2CC;
+  }
+}
+@keyframes glow2 {
+  from {
+    text-shadow: 0 0 1px #FF3366, 0 0 2px #CC294F, 0 0 3px #991F3A;
+  }
+  to {
+    text-shadow: 0 0 2px #FF3366, 0 0 4px #CC294F, 0 0 6px #991F3A, 0 0 8px #661426;
+  }
+}
+
 body::before{
   content: '';
   position: fixed;
@@ -205,6 +229,7 @@ body::before{
 
 .name{
   font-family: fenwick;
+  animation: glow2 2s ease-in-out infinite alternate;
 }
 
 .hamburger{
@@ -275,15 +300,19 @@ main{
 
 /* ------------ABOUT------------ */
 
+.coverimage{
+  height: 100%;
+  margin-top: var(--navheight);
+}
 
 .coverimage img{
   height: var(--coverimage_height);
   width: var(--coverimage_width);
-  margin-top: var(--navheight);
   object-fit: cover;
   object-position: 22% 50%;
   filter: grayscale(1);
   transition: filter 0.5s ease;
+  display: block;
 }
 .coverimage img:hover{
   filter: grayscale(0);
@@ -299,7 +328,7 @@ main{
 
 #imgcontainer{
   width: var(--img_container_width);
-  margin-right: var(--halfunit);
+  margin-right: var(--quarterunit);
 }
 
 #imgcontainer img{
@@ -336,21 +365,39 @@ main{
   width: var(--sig_width);
   height: var(--sig_height);
   position: absolute;
-  bottom: 0.35rem;
-  right: 1rem;
+  top: calc(100% + 1rem);
+  right: 0;
 }
 
 .introclosetext{
   position: absolute;
-  top: calc(100% + 1rem);
+  top: -2rem;
   right: 1rem;
-  text-align: right;
+  height: var(--intro_height);
+  display: flex;
+  justify-content: center;
 }
 
 .introclosetext, .introclosetext *{
   color: red; 
   display: inline-block;
   transition: transform 0.5s ease;
+  font-family: bahnschrift;
+  font-size: 1.3rem;
+}
+
+.introclosetext.long{
+  top: 1rem;
+  right: calc(var(--quarterunit) * -2);
+  writing-mode: vertical-lr;
+}
+.introclosetext.long, .introclosetext.long *{
+  font-size: calc(calc(var(--intro_height) - 2rem) / 22);
+}
+.introclosetext *:not(div){
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
 }
 
 .introclosetext.short{
@@ -368,6 +415,13 @@ main{
   transform: translateX(1em);
 }
 
+.introclosetext.long a:hover{
+  transform: translateY(-1em);
+}
+
+.introclosetext.long a:nth-of-type(2):hover{
+  transform: translateY(1em);
+}
 
 /* --SECTIONS-- */
 
@@ -381,6 +435,9 @@ main{
 .header h1, .header h2{
   font-family: fenwick;
   font-size: 3.5em;
+}
+.header h1{
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .content-wrapper{
@@ -466,7 +523,7 @@ li:not(last-of-type){
   padding-bottom: 0;
 }
 .startend.start.margintop{
-  margin-top: calc(var(--navheight) + calc(var(--eighthunit) / 3));
+  margin-top: calc(var(--navheight) + 2px);
 }
 
 .divider{
@@ -480,7 +537,7 @@ li:not(last-of-type){
 }
 .divider.left, .divider.right{
   display: inline-block;
-  margin: 0 calc(var(--eighthunit) / 3);
+  margin: var(--quarterunit);
 }
 
 #maintools *{
@@ -490,6 +547,9 @@ li:not(last-of-type){
 #maintools img{
   height: calc(calc(var(--sectionitem_height) - var(--section-item_padding) * 2) - calc(2em + var(--eighthunit)));
   width: calc(calc(var(--sectionitem_height) - var(--section-item_padding) * 2) - calc(2em + var(--eighthunit)));
+}
+#maintools .content-wrapper{
+  overflow: hidden;
 }
 .divider-darkmode{
   display: none;
@@ -731,15 +791,6 @@ iframe{
   }
 }
 
-@media (max-width: 1350px) or (max-aspect-ratio: 1/3){
-  .introclosetext.long{
-    display: none;
-  }
-  .introclosetext.short{
-    display: inline-block;
-  }
-}
-
 @media (max-width: 1300px) or (max-aspect-ratio: 1/3){
   #introtext, .right-content{
     column-gap: var(--quarterunit);
@@ -923,7 +974,7 @@ iframe{
   :root{
     --unit: 10vh;
     --navheight: max(calc(var(--halfunit) * 1.39), 2.5rem);
-    --sig_height: calc(var(--halfunit) - 0.5rem);
+    --sig_height: calc(var(--halfunit) * 1.5);
   }
   .intro{
     flex-direction: column;
@@ -932,8 +983,15 @@ iframe{
   #introtext{
     column-count: 2;
   }
-  .introclosetext{
-    top: calc(100% + 0.5rem);
+  .introclosetext.long{
+    display: none;
+  }
+  .introclosetext.short{
+    display: inline-block;
+  }
+  .introclosetext *{
+    font-size: 1.2rem;
+    text-decoration-thickness: 2px !important;
   }
   #signature{
     bottom: 0.1rem;
@@ -960,6 +1018,7 @@ iframe{
   :root{
     --unit: 8vh;
     --navbar_vertical_discrepancy: 0.06rem;
+    --sig_height: calc(var(--halfunit) * 1.75);
   }
   .title, .title span{
     line-height: 1.165rem;
@@ -985,6 +1044,9 @@ iframe{
   #introtext, .right-content{
     column-count: 2;
     column-gap: var(--thirdunit);
+  }
+  .introclosetext{
+    right: 0.5rem;
   }
   .longform{
     flex-direction: column;
@@ -1028,6 +1090,13 @@ iframe{
   }
 }
 
+@media (max-width: 800px) or (max-aspect-ratio: 1/3){
+  #signature{
+    right: -0.4rem;
+    top: calc(100% + 0.5rem);
+  }
+}
+
 @media (max-width: 700px) or (max-aspect-ratio: 1/3){
   :root{
     --sectionitem_height: var(--elwidth);
@@ -1047,6 +1116,12 @@ iframe{
   #introtext, .right-content{
     column-count: 1;
     column-gap: var(--thirdunit);
+  }
+  .introclosetext.short{
+    top: -1.9rem;
+  }
+  .introclosetext.short *{
+    font-size: 1.1rem;
   }
   .section:not(#maintools){
     grid-template-columns: repeat(1, 1fr);
@@ -1072,30 +1147,6 @@ iframe{
   }
   .form-item.header{
     margin-bottom: calc(var(--eighthunit) * -1);
-  }
-}
-
-@media (max-width: 650px) or (max-aspect-ratio: 1/3){
-  :root{
-    --sig_height: min(calc(var(--halfunit) * 2), 2.7rem);
-  }
-  .introclosetext.short{
-    display: none;
-  }
-  .introclosetext_shorter{
-    position: absolute;
-    bottom: calc(100% + 0.1rem);
-    right: 0.25rem;
-    text-align: right;
-  }
-  .introclosetext_shorter, .introclosetext_shorter *{
-    color: red;
-    display: inline-block;
-  }
-  #signature{
-    bottom: none;
-    right: -0.4rem;
-    top: calc(100% + 0.5rem);
   }
 }
 
@@ -1140,6 +1191,12 @@ iframe{
     vertical-align: top;
     height: 1.3rem;
     width: 1.3rem;
+  }
+}
+
+@media (max-width: 530px) or (max-aspect-ratio: 1/3){
+  .introclosetext *{
+    font-size: 1rem !important;
   }
 }
 
@@ -1314,6 +1371,14 @@ iframe{
     color: #FFC2CC;
   }
 
+  .header h1{
+    animation: glow1 1.5s ease-in-out infinite alternate;
+  }
+
+  .name{
+    animation: glow2 1.5s ease-in-out infinite alternate;
+  }
+
   #envelope-shape, .hamicon .hamline{
     background-color: #FF3366;
   }
@@ -1324,14 +1389,6 @@ iframe{
 
   .mainnav, #hamtoggle:checked ~ .hamburger{
     border-bottom: 2px solid #FF3366;
-  }
-
-  #imgcontainer img{
-    filter: grayscale(1);
-    transition: filter 0.5s ease;
-  }
-  #imgcontainer img:hover{
-    filter: grayscale(0);
   }
 
   .divider-lightmode{
@@ -1361,6 +1418,7 @@ iframe{
     rgb(100, 90, 110) 100%;
   --container_background: rgba(0,0,0,0.5);
 }
+
 .darkmode::before{
   --bg_gradient_colors: 
     rgb(100, 90, 110) 0%,
@@ -1371,13 +1429,13 @@ iframe{
 }
 
 .darkmode :where(button){
-  background-color: white !important;
+  background-color: white;
 }
 
 .darkmode :where(.mainnav, .hamburger){
   background-color: #1A1A1A;
   color: #FF3366;
-  border-bottom: 2px solid #FF3366 !important;
+  border-bottom: 2px solid #FF3366;
 }
 
 .darkmode :where(.hamburger *){
@@ -1387,7 +1445,7 @@ iframe{
 .darkmode :where(.title, .title span, .link, 
 .link div, #introtext p:first-of-type::first-letter,
 .good-mention::marker){
-    color: #FF3366 !important;
+    color: #FF3366;
 }
 
 .darkmode :where(.header, .header h1, .header h2, 
@@ -1398,21 +1456,19 @@ iframe{
   color: #FFC2CC;
 }
 
+.darkmode :is(.header h1){
+  animation: glow1 1.5s ease-in-out infinite alternate;
+}
+.darkmode :where(.name){
+  animation: glow2 1.5s ease-in-out infinite alternate;
+}
+
 .darkmode :where(#envelope-shape, .hamicon .hamline){
-  background-color: #FF3366 !important;
+  background-color: #FF3366;
 }
 
 .darkmode :where(input, textarea){
   border: 1px dashed #FF3366;
-}
-
-.darkmode :where(#imgcontainer img){
-    filter: grayscale(1);
-    transition: filter 0.5s ease;  
-}
-
-.darkmode :where(#imgcontainer img:hover){
-  filter: grayscale(0);
 }
 
 .darkmode :where(.divider-lightmode){
@@ -1447,8 +1503,8 @@ iframe{
   color: black;
 }
 
-.lightmode :where(button){
-  background-color: #1A1A1A !important;
+.lightmode :is(button){
+  background-color: #1A1A1A;
 }
 
 .lightmode :where(.mainnav, .hamburger){
@@ -1461,30 +1517,29 @@ iframe{
   background-color: white;
 }
 
-.lightmode :where(.title, .title span, .link, 
-.link div, #introtext p:first-of-type::first-letter,
-.good-mention::marker){
-    color: red !important;
+.lightmode :is(.title, .title span, .link, 
+.link div, .good-mention::marker){
+    color: red;
 }
 
-.lightmode :where(.header, .header h1, .header h2, 
+.lightmode #introtext p:first-of-type::first-letter{
+  color: red !important;
+}
+
+.lightmode :is(.header, .header h1, .header h2, 
 .credits, .credits *,
 .introclosetext, .introclosetext *,
 .introclosetext_shorter, .introclosetext_shorter *,
 .contactclosetext, .contactclosetext *){
-  color: red !important;
+  color: red;
 }
 
-.lightmode :where(#envelope-shape, .hamicon .hamline){
-  background-color: red !important;
+.lightmode :is(#envelope-shape, .hamicon .hamline){
+  background-color: red;
 }
 
 .lightmode :where(input, textarea){
   border: 1px dashed red;
-}
-
-.lightmode :where(#imgcontainer img){
-    filter: grayscale(0) !important;
 }
 
 .lightmode :where(.divider-lightmode){

@@ -7,6 +7,15 @@
     transform-origin: right;}
 } 
 
+@keyframes glow2 {
+  from {
+    text-shadow: 0 0 1px #FF3366, 0 0 2px #CC294F, 0 0 3px #991F3A;
+  }
+  to {
+    text-shadow: 0 0 2px #FF3366, 0 0 4px #CC294F, 0 0 6px #991F3A, 0 0 8px #661426;
+  }
+}
+
 @font-face {
     font-family: 'dinpro';
     src: url('./dinpro/dinpro-light.ttf') format('truetype');
@@ -135,6 +144,9 @@ body{
   .title, .title span{
     color: #FF3366;
   }
+  .name{
+    animation: glow2 1.5s ease-in-out infinite alternate;
+  }
 }
 
 @supports(height: 1svh){
@@ -153,6 +165,9 @@ body{
 }
 .darkmode :where(.title, .title span){
   color: #FF3366;
+}
+.darkmode .name{
+  animation: glow2 1.5s ease-in-out infinite alternate;
 }
 
 .lightmode{
