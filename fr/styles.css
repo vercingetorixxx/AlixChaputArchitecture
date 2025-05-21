@@ -1538,6 +1538,10 @@ iframe{
   border: 1px dashed red;
 }
 
+.lightmode .header h1, .lightmode .name{
+  animation: none;
+}
+
 .lightmode :where(.divider-lightmode){
   display: inline-block;
 }
