@@ -1332,6 +1332,12 @@ iframe{
   .link:hover{
     font-weight: 400;
   }
+  .flipper:hover{
+    transform: none;
+  }
+  .flipped:hover{
+    transform: none;
+  }
   .link:hover, .introclosetext a:hover, 
   .introclosetext a:nth-of-type(2):hover, 
   #envelope-shape:hover, .grid-item img:hover,
