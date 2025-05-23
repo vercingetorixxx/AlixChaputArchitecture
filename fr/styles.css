@@ -296,21 +296,50 @@ main{
 /* ------------ABOUT------------ */
 
 .coverimage{
-  height: 100%;
-  margin-top: var(--navheight);
-}
-
-.coverimage img{
   height: var(--coverimage_height);
   width: var(--coverimage_width);
+  margin-top: var(--navheight);
+  position: relative;
+  overflow: hidden;
+}
+.slides{
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides img{
+  height: var(--coverimage_height);
+  width: var(--coverimage_width);
+  flex: 0 0 var(--coverimage_width);
   object-fit: cover;
   object-position: 22% 50%;
   filter: grayscale(1);
   transition: filter 0.5s ease;
   display: block;
 }
-.coverimage img:hover{
+.slides img:hover{
   filter: grayscale(0);
+}
+
+.prev, .next{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 10px 14.5px 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+.prev{
+  left: 10px;
+}
+.next{
+  right: 10px;
+}
+.prev:hover, .next:hover{
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .intro{
@@ -490,6 +519,9 @@ main{
 }
 .flipper.flipped .front .content-wrapper{
   opacity: 0;
+}
+.flipper.flipped{
+  transform: rotateY(-180deg);
 }
 .flipper:hover{
   transform: rotateY(-10deg);
@@ -1326,7 +1358,7 @@ iframe{
   .introclosetext a:nth-of-type(2), .introclosetext_shorter a:nth-of-type(2){
     animation: shiftright 5s infinite;
   }
-  .coverimage img{
+  .slides img{
     filter: grayscale(0);
   }
   .grid-item img{
@@ -1356,6 +1388,9 @@ iframe{
   .link:active{
     transform: scale(1.15);
     font-weight: bold;
+  }
+  .flipper.flipped{
+    transform: rotateY(-180deg);
   }
 }
 
@@ -1597,9 +1632,6 @@ iframe{
   display: none;
 }
 
-
-/* ----- Here so I don't have to use "!important" ----- */
-
-.flipper.flipped{
-  transform: rotateY(-180deg);
+.prev, .next{
+  color: white;
 }

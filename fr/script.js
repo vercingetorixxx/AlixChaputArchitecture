@@ -70,7 +70,7 @@ window.addEventListener('scroll', handleScrolldown);
 handleScrolldown();
 
 
-// -------- si-container flip ----------- //
+// -------- .si-container flip ----------- //
 
 
 document.querySelectorAll('.si-container').forEach(container => {
@@ -83,4 +83,37 @@ document.querySelectorAll('.si-container').forEach(container => {
         container.classList.remove('flipping');
         }, 100);
     });
+});
+
+
+// -------- image slideshow ----------- //
+
+const container = document.querySelector('.coverimage');
+const slides = document.querySelector('.slides');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+const images = slides.querySelectorAll('img');
+let imageWidth = container.clientWidth;
+let currentIndex = 0;
+
+function updateTransform() {
+    slides.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+}
+
+// Set initial position
+updateTransform();
+
+next.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateTransform();
+});
+
+prev.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateTransform();
+});
+
+window.addEventListener('resize', () => {
+    imageWidth = container.clientWidth;
+    updateTransform();
 });
