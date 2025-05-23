@@ -77,10 +77,10 @@ document.querySelectorAll('.si-container').forEach(container => {
     container.addEventListener('click', () => {
         container.querySelector('.flipper').classList.toggle('flipped');
         container.classList.add('flipping');
-        
+
         // Remove flipping class after transition ends
         setTimeout(() => {
-        siContainer.classList.remove('flipping');
+        container.classList.remove('flipping');
         }, 100);
     });
 });

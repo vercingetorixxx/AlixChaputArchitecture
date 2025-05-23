@@ -257,7 +257,7 @@ body::before{
   display: inline;
   height: 0.88rem;
   width: 1.32rem;
-  margin-bottom: calc(var(--navbar_vertical_discrepancy) * -1);
+  margin-bottom: calc(var(--navbar_vertical_discrepancy) * -0.35);
 }
 
 button.link{
@@ -424,7 +424,10 @@ main{
 .header{
   text-align: center;
   color: red;
-  margin: 0 auto var(--thirdunit) auto;
+  margin: 0 auto 0 auto;
+}
+.header h2{
+  margin-bottom: var(--thirdunit);
 }
 .header h1, .header h2{
   font-family: fenwick;
@@ -490,9 +493,6 @@ main{
 }
 .flipper:hover{
   transform: rotateY(-10deg);
-}
-.flipper.flipped{
-  transform: rotateY(-180deg);
 }
 .flipped:hover{
   transform: rotateY(-170deg);
@@ -938,6 +938,12 @@ iframe{
   .links.main{
     display: none;
   }
+  .link img{
+    margin-bottom: calc(var(--navbar_vertical_discrepancy) * -1.3);
+  }
+  button.link{
+    margin-bottom: calc(var(--navbar_vertical_discrepancy) * -0.95);
+  }
 
   #hamtoggle{
     display: none;
@@ -1333,10 +1339,10 @@ iframe{
     font-weight: 400;
   }
   .flipper:hover{
-    transform: rotateY(0deg);
+    transform: none;
   }
   .flipped:hover{
-    transform: rotateY(0deg);
+    transform: none;
   }
   .link:hover, .introclosetext a:hover, 
   .introclosetext a:nth-of-type(2):hover, 
@@ -1589,4 +1595,11 @@ iframe{
 }
 .lightmode :where(.divider-darkmode){
   display: none;
+}
+
+
+/* ----- Here so I don't have to use "!important" ----- */
+
+.flipper.flipped{
+  transform: rotateY(-180deg);
 }
