@@ -1333,10 +1333,10 @@ iframe{
     font-weight: 400;
   }
   .flipper:hover{
-    transform: none;
+    transform: rotateY(0deg);
   }
   .flipped:hover{
-    transform: none;
+    transform: rotateY(0deg);
   }
   .link:hover, .introclosetext a:hover, 
   .introclosetext a:nth-of-type(2):hover, 
