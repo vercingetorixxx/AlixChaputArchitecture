@@ -13,6 +13,10 @@
   }
 }
 
+:root{
+  --color4: white;
+}
+
 body{
   background: var(--color4);
   height: 100vh;
@@ -73,6 +77,9 @@ body::before{
 }
 
 @media (prefers-color-scheme: dark) {
+  :root{
+    --color4: #1A1A1A;
+  }  
   .name{
     animation: glow2 1.5s ease-in-out infinite alternate;
   }
@@ -86,8 +93,16 @@ body::before{
   }
 }
 
+.darkmode{
+  --color4: #1A1A1A;
+}
+
 .darkmode .name{
   animation: glow2 1.5s ease-in-out infinite alternate;
+}
+
+.lightmode{
+  --color4: white;
 }
 
 .lightmode .name{

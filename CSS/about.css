@@ -282,22 +282,6 @@
   margin-bottom: calc(var(--eighthUnit) / 2);
 }
 
-.startEnd{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.startEnd.start{
-  align-items: normal;
-}
-.startEnd .header{
-  margin-top: calc(var(--unit));
-  padding-bottom: 0;
-}
-.startEnd.start.marginTop{
-  margin-top: calc(var(--navHeight) + 2px);
-}
-
 #mainTools *{
   text-align: center;
   align-items: center;
