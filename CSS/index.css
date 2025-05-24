@@ -1,0 +1,95 @@
+@keyframes shrinkRight{
+  0% { transform: scaleX(1); transform-origin: right;}
+  40% { transform: scaleX(0); transform-origin: right;}
+  100% { transform: scaleX(0); transform-origin: right;}
+} 
+
+@keyframes glow2 {
+  from {
+    text-shadow: 0 0 1px #FF3366, 0 0 2px #CC294F, 0 0 3px #991F3A;
+  }
+  to {
+    text-shadow: 0 0 2px #FF3366, 0 0 4px #CC294F, 0 0 6px #991F3A, 0 0 8px #661426;
+  }
+}
+
+body{
+  background: var(--color4);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body::before{
+  background: var(--color4);
+}
+
+.name{
+  font-weight: bold;
+}
+
+.title.short{
+  display: none;
+}
+
+.title{
+  width: fit-content;
+  position: relative;
+}
+
+.titleContainer{
+  padding: 0 2rem;
+}
+
+.concealer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: var(--color4);
+  animation: shrinkRight 10s linear;
+}
+
+@media (max-width: 800px){
+  .title .ghost{
+    display: none;
+  }
+}
+
+@media (max-width: 575px){
+  .title.long{
+    display: none;
+  }
+  .title.short{
+    display: inline-block;
+  }
+}
+
+@media (max-width: 450px){
+  .title, .title span, .titleContainer, .titleContainer span{
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .name{
+    animation: glow2 1.5s ease-in-out infinite alternate;
+  }
+}
+
+@supports(height: 1svh){
+  body{
+    height: 100svh;
+    width: 100svw;
+    overflow: hidden;
+  }
+}
+
+.darkmode .name{
+  animation: glow2 1.5s ease-in-out infinite alternate;
+}
+
+.lightmode .name{
+  animation: none;
+}

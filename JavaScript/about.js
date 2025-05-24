@@ -1,7 +1,7 @@
-// -------- .si-container flip ----------- //
+// -------- .siContainer flip ----------- //
 
 
-document.querySelectorAll('.si-container').forEach(container => {
+document.querySelectorAll('.siContainer').forEach(container => {
     container.addEventListener('click', () => {
         container.querySelector('.flipper').classList.toggle('flipped');
         container.classList.add('flipping');

@@ -1,4 +1,4 @@
-const toggleDarkButtons = document.querySelectorAll('.dark-mode-toggle');
+const toggleDarkButtons = document.querySelectorAll('.darkModeToggle');
 
 toggleDarkButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -17,7 +17,7 @@ toggleDarkButtons.forEach(button => {
     });
 });
 
-const toggleLightButtons = document.querySelectorAll('.light-mode-toggle');
+const toggleLightButtons = document.querySelectorAll('.lightModeToggle');
 
 toggleLightButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -49,18 +49,18 @@ if (savedTheme === 'dark') {
 // -------- STICKY NAVBAR ----------- //
 
 
-const mainnav = document.querySelector('.mainnav');
-const hamicon = document.querySelector('.hamicon');
+const mainNav = document.querySelector('.mainNav');
+const hamIcon = document.querySelector('.hamIcon');
 const hamburger = document.querySelector('.hamburger');
 const threshold = window.innerHeight / 6;
 console.log(threshold);
 
 function handleScrolldown(){
     if (window.scrollY > threshold) {
-        [mainnav, hamicon, hamburger].forEach(el => el.classList.add('hidden'));
+        [mainNav, hamIcon, hamburger].forEach(el => el.classList.add('hidden'));
     } 
     else {
-        [mainnav, hamicon, hamburger].forEach(el => el.classList.remove('hidden'));
+        [mainNav, hamIcon, hamburger].forEach(el => el.classList.remove('hidden'));
     }
 }
 

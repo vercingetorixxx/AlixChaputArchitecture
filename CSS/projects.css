@@ -1,0 +1,25 @@
+.gridContainer{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: var(--halfUnit);
+}
+
+.gridItem img{
+  width: 100%;
+  transition: filter 0.5s ease;
+  display: block;
+  filter: grayscale(1);
+}
+
+.gridItem img:hover{
+  filter: grayscale(0);
+}
+
+.imgCaption{
+  max-height: calc(var(--doubleUnit) * 2);
+  padding: var(--quarterUnit);
+  background: var(--containerBg);
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+}
