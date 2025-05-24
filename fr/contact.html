@@ -42,71 +42,86 @@
     </div>
   </nav>
 
-  <div class="startend start margintop">
-    <div class="divider left">
-        <img class="divider-lightmode" src="../images/asterisk.webp">
-      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
+  <div class="border margintop">
+      
+    <div class="startend start">
+      <div class="divider left">
+        <img class="divider-lightmode" src="../images/icons/iconDown.webp">
+        <img class="divider-darkmode" src="../images/dark_icons/down.webp">
+      </div>
+      <div class="header">
+        <h1>{ ME CONTACTER }</h1>
+      </div>
+      <div class="divider right">
+        <img class="divider-lightmode" src="../images/icons/iconDown.webp">
+        <img class="divider-darkmode" src="../images/dark_icons/down.webp">
+      </div>
     </div>
-    <div class="header">
-      <h1>ME CONTACTER</h1>
+
+    <main id="main">
+
+      <form method="post" action="https://formspree.io/alix.chaput@gmail.com">
+        <div class="form-item name_input">
+          <label for="name_input"><span class="bold large">NOM</span></label>
+          <input type="text" id="name" name="name" required/>
+        </div>
+        <div class="form-item">
+          <label for="name"><span class="bold large">EMAIL</span></label>
+          <input type="email" id="email" name="email" required/>
+        </div>
+        <div class="form-item">
+          <label for="subject"><span class="bold large">SUJET</span></label>
+          <input type="text" name="subject" required>
+        </div>
+        <div class="form-item">
+          <label for="body"><span class="bold large">MESSAGE</span></label>
+          <textarea id="body" name="body" required></textarea>
+        </div>
+        <div id="envelope-shape">
+          <input class="form-item" type="submit" value="ENVOYER">
+        </div>
+        <div class="contactclosetext long">
+          <a href="https://fr.linkedin.com/in/alix-chaput?trk=public_post_feed-actor-name" target="_blank" 
+            alt="Linkedin"><span class="bold">Voir mon Linkedin</span></a><div><span class="bold"
+            >&nbsp;&nbsp;|&nbsp;&nbsp;</span></div><p>alix.chaput@gmail.com</p>
+        </div>
+        <div class="contactclosetext short">
+          <a href="https://fr.linkedin.com/in/alix-chaput?trk=public_post_feed-actor-name" target="_blank" 
+            alt="Linkedin"><img src="../images/InBug-White.webp"></a><div><span class="bold"
+            >&nbsp;&nbsp;|&nbsp;&nbsp;</span></div><p>alix.chaput@gmail.com</p>
+        </div>
+      </form>
+
+    </main>
+
+    <div class="startend">
+      <div class="divider left">
+        <img class="divider-lightmode" src="../images/icons/iconUp.webp">
+        <img class="divider-darkmode" src="../images/dark_icons/up.webp">
+      </div>
+      <div class="credits">
+        Site Web par <span class="bold">Chanwu Oh</span>
+      </div>
+      <div class="divider right">
+        <img class="divider-lightmode" src="../images/icons/iconUp.webp">
+        <img class="divider-darkmode" src="../images/dark_icons/up.webp">
+      </div>
     </div>
-    <div class="divider right">
-        <img class="divider-lightmode" src="../images/asterisk.webp">
-      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
-    </div>
+
   </div>
 
-  <main id="main">
+  <dialog id="successDialog">
+    <div>Votre message a été envoyé.</div>
+    <div>Merci pour votre intérêt !</div>
+  </dialog>
 
-    <form method="get" action="mailto:alix.chaput@gmail.com">
-      <div class="form-item name_input">
-        <label for="name_input"><span class="bold large">NOM</span></label>
-        <input type="text" id="name" name="name" required/>
-      </div>
-      <div class="form-item">
-        <label for="name"><span class="bold large">EMAIL</span></label>
-        <input type="email" id="email" name="email" required/>
-      </div>
-      <div class="form-item">
-        <label for="subject"><span class="bold large">SUJET</span></label>
-        <input type="text" name="subject" required>
-      </div>
-      <div class="form-item">
-        <label for="body"><span class="bold large">MESSAGE</span></label>
-        <textarea id="body" name="body" required></textarea>
-      </div>
-      <div id="envelope-shape">
-        <input class="form-item" type="submit" value="ENVOYER">
-      </div>
-      <div class="contactclosetext long">
-        <a href="https://fr.linkedin.com/in/alix-chaput?trk=public_post_feed-actor-name" target="_blank" 
-          alt="Linkedin"><span class="bold">Voir mon Linkedin</span></a><div><span class="bold"
-          >&nbsp;&nbsp;|&nbsp;&nbsp;</span></div><p>alix.chaput@gmail.com</p>
-      </div>
-      <div class="contactclosetext short">
-        <a href="https://fr.linkedin.com/in/alix-chaput?trk=public_post_feed-actor-name" target="_blank" 
-          alt="Linkedin"><img src="../images/InBug-White.webp"></a><div><span class="bold"
-          >&nbsp;&nbsp;|&nbsp;&nbsp;</span></div><p>alix.chaput@gmail.com</p>
-      </div>
-    </form>
-
-  </main>
-
-  <div class="startend">
-    <div class="divider left">
-        <img class="divider-lightmode" src="../images/asterisk.webp">
-      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
-    </div>
-    <div class="credits">
-      Site Web par <span class="bold">Chanwu Oh</span>
-    </div>
-    <div class="divider right">
-        <img class="divider-lightmode" src="../images/asterisk.webp">
-      <img class="divider-darkmode" src="../images/dark_icons/asterisk.webp">
-    </div>
-  </div>
+  <dialog id="failDialog">
+    <div>Votre message a été envoyé.</div>
+    <div>Merci pour votre intérêt !</div>
+  </dialog>
 
   <script src="script.js"></script>
+  <script src="contact.js"></script>
 
 </body>
 </html>

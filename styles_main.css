@@ -71,6 +71,10 @@ body{
   text-align: center;
 }
 
+.name{
+  font-weight: bold;
+}
+
 .title.short{
   display: none;
 }
@@ -95,10 +99,6 @@ body{
   font-size: 2rem;
   line-height: 1.65rem;
   color: red;
-}
-
-.name{
-  font-family: fenwick;
 }
 
 @media (max-width: 800px){

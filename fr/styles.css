@@ -30,6 +30,7 @@
   --link_margin: 4vw;
   --section-item_padding: var(--halfunit);
   --navbar_vertical_discrepancy: 0.11rem;
+  --moattiFontSize: calc(calc(var(--sectionitem_height) - calc(var(--section-item_padding) * 2)) / 16.5);
 }
 
 @supports(height: 1svh){
@@ -103,8 +104,13 @@
   font-size: 1.1rem;
 }
 
-.bold{
-  font-weight: bold;
+.bold, .contract{
+  font-size: 1.15rem;
+}
+.underline{
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
 }
 
 .large{
@@ -136,6 +142,13 @@ body{
   background: repeating-linear-gradient(
     to right, var(--bg_gradient_colors));
   width: var(--bodywidth);
+}
+
+.border{
+  border: 40px solid white;
+}
+.border.margintop{
+  margin-top: calc(var(--navheight) + 2px);
 }
 
 @keyframes waveShift {
@@ -224,7 +237,7 @@ body::before{
 }
 
 .name{
-  font-family: fenwick;
+  font-weight: bold;
 }
 
 .hamburger{
@@ -383,6 +396,9 @@ main{
   float: left;
   margin-right: 0.6rem;
   margin-top: 0.3rem;
+}
+#introtext > p{
+  font-size: 1rem;
 }
 
 #signature{
@@ -557,10 +573,25 @@ main{
 .front h3{
   font-size: 2.2rem;
   margin-top: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+  font-family: bahnschrift;
+  color: red;
 }
-.front .content-wrapper .bold, .front .desc-date{
+.moatti *{
+  font-size: var(--moattiFontSize);
+  color: red !important;
+}
+.front .content-wrapper .bold, .front .desc-date, .contract{
   width: 100%;
   text-align: end;
+}
+.desc-date{
+  font-weight: bold;
+}
+.desc-date{
+  font-size: 1.8rem;
 }
 .back *{
   font-size: 1.2rem;
@@ -689,7 +720,7 @@ main{
 }
 
 
-/* -----------CONTACT----------- */
+/* -----------CONTACT ME----------- */
 
 
 form{
@@ -788,6 +819,28 @@ textarea{
   transform: translateX(-1em);
 }
 
+dialog{
+  background: white;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  border: 2px red solid;
+}
+dialog *{
+  font-size: 2rem;
+  text-align: center;
+}
+dialog div:first-child{
+  margin-bottom: var(--eighthunit);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
 
 /* -----------PROJECT1----------- */
 
@@ -1448,11 +1501,11 @@ iframe{
   }
 
   .header h1{
-    animation: glow1 1.5s ease-in-out infinite alternate;
+    animation: glow1 7s ease-in-out infinite alternate;
   }
 
   .name{
-    animation: glow2 1.5s ease-in-out infinite alternate;
+    animation: glow2 7s ease-in-out infinite alternate;
   }
 
   #envelope-shape, .hamicon .hamline{
@@ -1480,6 +1533,11 @@ iframe{
   .light-mode-toggle{
     display: inline-block;
   }
+
+  dialog{
+    background: #1A1A1A;
+    border: 2px #FF3366 solid;
+  }
 }
 
 /* ---------- DARKMODE ---------- */
@@ -1502,6 +1560,10 @@ iframe{
     rgb(120, 120, 100) 50%,
     rgb(140, 90, 110) 80%,
     rgb(100, 90, 110) 100%;
+}
+
+.darkmode :is(.border){
+  border: 40px solid #1A1A1A;
 }
 
 .darkmode :is(button){
@@ -1532,10 +1594,10 @@ iframe{
 }
 
 .darkmode :is(.header h1){
-  animation: glow1 1.5s ease-in-out infinite alternate;
+  animation: glow1 7s ease-in-out infinite alternate;
 }
 .darkmode :is(.name){
-  animation: glow2 1.5s ease-in-out infinite alternate;
+  animation: glow2 7s ease-in-out infinite alternate;
 }
 
 .darkmode :is(#envelope-shape, .hamicon .hamline){
@@ -1555,6 +1617,11 @@ iframe{
 }
 .darkmode :where(.divider-darkmode){
   display: inline-block;
+}
+
+.darkmode dialog{
+  background: #1A1A1A;
+  border: 2px #FF3366 solid;
 }
 
 /* ---------- LIGHTMODE ---------- */
@@ -1634,4 +1701,9 @@ iframe{
 
 .prev, .next{
   color: white;
+}
+
+.lightmode dialog{
+  background: white;
+  border: 2px red solid;
 }
