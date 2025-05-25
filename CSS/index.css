@@ -42,7 +42,7 @@ body::before{
   position: relative;
 }
 
-.titleContainer{
+.titleText{
   padding: 2rem;
 }
 
@@ -67,12 +67,6 @@ body::before{
   }
   .title.short{
     display: inline-block;
-  }
-}
-
-@media (max-width: 450px){
-  .title, .title span, .titleContainer, .titleContainer span{
-    font-size: 1.5rem;
   }
 }
 
