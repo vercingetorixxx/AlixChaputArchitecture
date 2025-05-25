@@ -197,6 +197,12 @@
   transform: translateY(1em);
 }
 
+
+
+/* ------------ SECTIONS -------------- */
+
+
+
 .section{
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -213,13 +219,14 @@
   width: var(--sectionItemHeight);
   perspective: 800px;
 }
+.flipping{
+  z-index: 10;
+}
+
 .flipper{
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s ease; 
-}
-.flipping{
-  z-index: 10;
 }
 .sectionItem{
   padding: var(--sectionItemPadding);

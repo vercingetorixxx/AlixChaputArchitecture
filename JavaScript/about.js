@@ -9,7 +9,7 @@ document.querySelectorAll('.siContainer').forEach(container => {
         // Remove flipping class after transition ends
         setTimeout(() => {
         container.classList.remove('flipping');
-        }, 100);
+        }, 1000);
     });
 });
 
@@ -17,7 +17,7 @@ document.querySelectorAll('.siContainer').forEach(container => {
 // -------- image slideshow ----------- //
 
 
-const container = document.querySelector('.coverimage');
+const container = document.querySelector('.coverImage');
 const slides = document.querySelector('.slides');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
