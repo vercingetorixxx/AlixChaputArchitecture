@@ -478,10 +478,6 @@ main{
 
 
 @media (max-width: 700px) or (max-aspect-ratio: 1/3){
-  .navText{
-    width: 100%;
-  }
-
   .header h1, .header h2{
     font-size: 2.7em;
   }
@@ -500,9 +496,6 @@ main{
   }
   .titleText, .titleText span{
     --textSize: 1.6rem;
-  }
-  .navText{
-    justify-content: start;
   }
   .title.long{
     display: none;
@@ -526,8 +519,8 @@ main{
   :root{
     --linkMargin: 3vw;
   }
-  .navText{
-    padding: 0 3vw 0 3vw;
+  .titleText, .titleText span{
+    --textSize: 1.4rem;
   }
   .link{
     font-size: 1rem;
