@@ -132,14 +132,6 @@ p, h1, h2, h3, h4, ul{
   margin: 0;
 }
 
-h3, h4, #mainTools img{
-  margin-bottom: var(--eighthUnit);
-}
-
-h3{
-  font-size: 1.4em;
-}
-
 body{
   margin: 0;
   background: repeating-linear-gradient(
