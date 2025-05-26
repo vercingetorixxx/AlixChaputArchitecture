@@ -364,16 +364,23 @@
 /* ------------------------- */
 
 
-#mainTools *{
+#mainTools h3{
     text-align: center;
-    align-items: center;
+    border: 1px solid black;
 }
 #mainTools img{
-    height: calc(calc(var(--sectionItemHeight) - var(--sectionItemPadding) * 2) - calc(2em + var(--eighthUnit)));
-    width: calc(calc(var(--sectionItemHeight) - var(--sectionItemPadding) * 2) - calc(2em + var(--eighthUnit)));
+    height: fit-content;
+    width: fit-content;
+    flex: 1;
+    border: 1px solid black;
 }
 #mainTools .contentWrapper{
      overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+     border: 1px solid black;
 }
 
 
