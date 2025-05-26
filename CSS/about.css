@@ -6,8 +6,6 @@
     --sigWidth: calc(var(--sigHeight) * 2.73);
     --sectionItemHeight: calc((var(--elWidth) - var(--halfUnit)) / 3);    
     --sectionItemPadding: var(--halfUnit);
-    --subTitleFontSize: calc(calc(var(--sectionItemHeight) - 
-        calc(var(--sectionItemPadding) * 2)) / 15.9);
     --coverImageHeight: calc(100vh - var(--navHeight));
     --coverImageWidth: 100vw;
 }
@@ -284,6 +282,13 @@
 
 /* ------------------------- */
 
+.contentWrapper.dl{
+    container-type: inline-size;
+}
+
+.siContainer *{
+    font-size: 6cqi;
+}
 
 .front .contentWrapper{
     position: relative;
@@ -298,7 +303,7 @@
     margin: 0;
 }
 .front h3{
-    font-size: 2.2rem;
+    font-size: 13cqi;
     margin: 0;
     text-decoration: underline;
     text-decoration-thickness: 3px;
@@ -307,7 +312,7 @@
     color: var(--color1);
 }
 .subTitle *{
-    font-size: var(--subTitleFontSize);
+    font-size: 6.3cqi;
     color: var(--color1);
 }
 .front .contentWrapper .bold, .front .descDate, .contract{
@@ -316,7 +321,7 @@
 }
 
 .back *{
-    font-size: 1.2rem;
+    font-size: 7cqi;
 }
 .back .contentWrapper div{
     width: 100%;
@@ -326,16 +331,14 @@
 
 .descDate{
     font-weight: bold;
-    font-size: 1.8rem;
-}
-.contract, .contract *{
-    font-size: 1.15rem;
+    font-size: 11cqi;
 }
 .contract{
     display: block;
 }
 .paper, .paper *{
-    font-size: 0.9rem;
+    font-size: 5cqi;
+    text-align: right;
 }
 .paperName{
     text-align: left;
@@ -349,12 +352,14 @@
     position: absolute;
     bottom: 0rem;
     left: 0rem;
-    --textSize: 4.5rem;
+    font-size: var(--textSize);
+    --textSize: 24cqi;
     color: var(--color1);
+    margin-bottom: 1cqi;
 }
 
 .ita{
-  padding-right: 0.1rem;
+    padding-right: 0.1rem;
 }
 
 
@@ -362,15 +367,15 @@
 
 
 #mainTools *{
-  text-align: center;
-  align-items: center;
+    text-align: center;
+    align-items: center;
 }
 #mainTools img{
-  height: calc(calc(var(--sectionItemHeight) - var(--sectionItemPadding) * 2) - calc(2em + var(--eighthUnit)));
-  width: calc(calc(var(--sectionItemHeight) - var(--sectionItemPadding) * 2) - calc(2em + var(--eighthUnit)));
+    height: calc(calc(var(--sectionItemHeight) - var(--sectionItemPadding) * 2) - calc(2em + var(--eighthUnit)));
+    width: calc(calc(var(--sectionItemHeight) - var(--sectionItemPadding) * 2) - calc(2em + var(--eighthUnit)));
 }
 #mainTools .contentWrapper{
-  overflow: hidden;
+     overflow: hidden;
 }
 
 
@@ -414,9 +419,6 @@
     }
     .sectionItem:not(#mainTools .sectionItem){
         --sectionItemPadding: var(--halfUnit);
-    }
-    .sectionItem .contentWrapper{
-        font-size: 1.1rem;
     }
     .sectionItem.image.odds{
         display: none;
@@ -506,10 +508,6 @@
     --sectionItemHeight: var(--elWidth);
   }
 
-  h3{
-    font-size: 1.2em;
-  }
-  
   #introText{
     column-count: 1;
     column-gap: var(--thirdUnit);
@@ -612,28 +610,8 @@
 }
 
 
-
-@media (max-width: 1350px) and (min-width: 1250px){
-    .front h3{
-        font-size: 1.8rem;
-    }
-    .front *, .back.edu *{
-        font-size: 1.1rem;
-    }
-}
-
-
-
 @media (max-width: 800px) and (min-width: 701px){
   :root{
     --sectionItemPadding: var(--thirdUnit);
-  }
-
-  .front h3{
-    font-size: 1.8rem;
-  }
-
-  .front *, .back.edu *{
-    font-size: 1.1rem;
   }
 }
