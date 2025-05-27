@@ -143,7 +143,7 @@ dialog::backdrop {
     form{
         display: grid;
         grid-template-columns: 1fr 1.5fr;
-        grid-template-rows: 1fr 1fr 2.5fr 1fr;
+        grid-template-rows: auto auto 1.8fr 1fr;
         height: auto;
         gap: var(--quarterUnit);
     }
@@ -154,7 +154,7 @@ dialog::backdrop {
 
     #envelopeShape{
         grid-column: span 2;
-        margin: 0 auto;
+        margin: var(--halfUnit) auto 0 auto;
     }
 
     #envelopeShape:hover{

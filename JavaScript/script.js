@@ -66,3 +66,17 @@ function handleScrolldown(){
 
 window.addEventListener('scroll', handleScrolldown);
 handleScrolldown();
+
+
+// -------- rotating asterisks ----------- //
+
+
+const asterisks = document.querySelectorAll('.asterisk');
+
+asterisks.forEach(asterisk => {
+    window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        const angle = scrollY / 3; // 1 degree per 3 pixels scrolled
+        asterisk.style.transform = `rotate(${angle}deg)`;
+    });
+});

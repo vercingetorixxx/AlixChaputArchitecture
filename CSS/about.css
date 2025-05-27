@@ -558,6 +558,11 @@
         --sigHeight: calc(var(--halfUnit) * 1.75);
     }
 
+    .border{
+        background: repeating-linear-gradient(
+          to bottom, var(--bgGradientColors));
+    }
+
     #introText{
         column-count: 2;
         column-gap: var(--thirdUnit);
