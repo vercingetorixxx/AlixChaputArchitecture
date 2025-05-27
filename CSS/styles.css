@@ -137,6 +137,7 @@ body{
   background: repeating-linear-gradient(
     to right, var(--bgGradientColors));
   width: var(--bodyWidth);
+  position: relative;
 }
 
 .noMarginText::before{
