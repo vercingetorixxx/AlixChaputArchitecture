@@ -166,7 +166,7 @@ body{
 }
 
 .border{
-  border: var(--quarterUnit) double var(--containerBg);
+  border: var(--quarterUnit) double var(--color4);
 }
 .border.marginTop{
   margin-top: calc(var(--navHeight) + 2px);
