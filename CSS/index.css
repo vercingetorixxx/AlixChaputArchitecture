@@ -17,15 +17,16 @@
   --color4: white;
 }
 
-body{
+#current-content{
   background: var(--color4);
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
 }
-body::before{
+#current-content::before{
   background: var(--color4);
 }
 
