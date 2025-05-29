@@ -17,19 +17,6 @@
   --color4: white;
 }
 
-#current-content{
-  background: var(--color4);
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-}
-#current-content::before{
-  background: var(--color4);
-}
-
 .name{
   font-weight: bold;
 }
@@ -82,7 +69,7 @@
 }
 
 @supports(height: 1svh){
-  body{
+  #current-content{
     height: 100svh;
     width: 100svw;
     overflow: hidden;

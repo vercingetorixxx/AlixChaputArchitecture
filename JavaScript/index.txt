@@ -10,10 +10,10 @@ links.forEach(link => {
     });
 });
 
-document.getElementById("meta-refresh").remove(); // Remove meta refresh if JavaScript is enabled
+// document.getElementById("meta-refresh").remove(); // Remove meta refresh if JavaScript is enabled
 
-if (link && link.href) {
-    setTimeout(function() {
-        navigateTo(link.href);
-    }, 6000); // 6000 milliseconds = 6 seconds
-}
+// if (link && link.href) {
+//     setTimeout(function() {
+//         navigateTo(link.href);
+//     }, 6000); // 6000 milliseconds = 6 seconds
+// }

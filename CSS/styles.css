@@ -17,6 +17,9 @@
   --color3: black;
   --color4: white;
   --color5: #1A1A1A;
+  --color6: rgb(255, 80, 80);
+  --color7: rgba(255,255,255,0.8);
+  --color8: rgba(255,194,204,0.8);
 
   --elWidth: calc(100vw - var(--doubleUnit));
   --navHeight: max(var(--halfUnit), 2.5rem);
@@ -127,6 +130,26 @@
   text-decoration: none;
   font-size: var(--textSize);
   color: var(--color3);
+}
+
+#current-content{
+  background: var(--color4);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+#current-content::before{
+  background: var(--color4);
+}
+
+.page-content{
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .bold{
@@ -241,6 +264,10 @@ body::before{
   display: inline;
   height: 0.88rem;
   width: 1.32rem;
+}
+
+.link.lang img{
+  margin-bottom: -0.025rem;
 }
 
 button.link{
@@ -593,6 +620,21 @@ main{
 }
 
 
+@media (prefers-color-scheme: light) {
+  .header h1{
+    animation: none;
+  }
+  .name{
+    animation: none;
+  }
+  .dividerLightMode, .darkModeToggle{
+    display: inline-block;
+  }
+  .dividerDarkMode, .lightModeToggle{
+    display: none;
+  }
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root{
@@ -608,6 +650,9 @@ main{
     --color3: #D3D3D3;
     --color4: #1A1A1A;
     --color5: white;
+    --color6: #FF3366;
+    --color7: rgba(0,0,0,0.5);
+    --color8: rgba(0,0,0,0.8);
   }
 
   .header h1{
@@ -645,6 +690,9 @@ main{
   --color3: #D3D3D3;
   --color4: #1A1A1A;
   --color5: white;
+  --color6: #FF3366;
+  --color7: rgba(0,0,0,0.5);
+  --color8: rgba(0,0,0,0.8);
 }
 
 .darkmode::before{
@@ -703,6 +751,9 @@ main{
   --color3: black;
   --color4: white;
   --color5: #1A1A1A;
+  --color6: rgb(255, 80, 80);
+  --color7: rgba(255,255,255,0.8);
+  --color8: rgba(255,194,204,0.8);
 }
 .lightmode::before{
   --bgGradientColors: 
