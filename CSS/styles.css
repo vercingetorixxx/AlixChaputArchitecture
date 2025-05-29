@@ -627,10 +627,16 @@ main{
   .name{
     animation: none;
   }
-  .dividerLightMode, .darkModeToggle{
+  .dividerLightMode{
+    display: inline-block;
+  }
+  .darkModeToggle{
     display: flex !important;
   }
-  .dividerDarkMode, .lightModeToggle{
+  .dividerDarkMode{
+    display: none;
+  }
+  .lightModeToggle{
     display: none !important;
   }
   .circle{
@@ -665,10 +671,17 @@ main{
     animation: glow2 7s ease-in-out infinite alternate;
   }
 
-  .dividerLightMode, .darkModeToggle{
+
+  .dividerLightMode{
+    display: none;
+  }
+  .darkModeToggle{
     display: none !important;
   }
-  .dividerDarkMode, .lightModeToggle{
+  .dividerDarkMode{
+    display: inline-block;
+  }
+  .lightModeToggle{
     display: flex !important;
     justify-content: end;
   }
@@ -740,7 +753,7 @@ main{
   display: none;
 }
 .darkmode :where(.dividerDarkMode){
-  display: inline-block;
+  display: inline-block; 
 }
 
 
