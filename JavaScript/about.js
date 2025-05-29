@@ -129,6 +129,9 @@ rest.addEventListener('click', () => {
     border.classList.add('moveUp');
     resizeIntroContent();
     document.body.style.overflow = 'auto';
+
+    logRects();
+    bracketManager();
 });
 
 rest2.addEventListener('click', () => {

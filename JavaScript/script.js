@@ -84,3 +84,57 @@ asterisks.forEach(asterisk => {
         asterisk.style.transform = `rotate(${angle}deg)`;
     });
 });
+
+
+// -------- dynamic headers ----------- //
+
+
+function getNumberOfLines(element) {
+    element.offsetHeight;
+    const range = document.createRange();
+    range.selectNodeContents(element); // Selects all content inside the .header element
+    const rects = range.getClientRects(); // Gets rectangles for each line
+    return rects.length; // Number of rectangles = number of lines
+}
+
+const headers = document.querySelectorAll('.header');
+
+// Store original text content for each header to avoid cumulative errors
+headers.forEach(header => {
+    header.dataset.originalText = header.textContent.trim(); // Save original text
+});
+
+function logRects() {
+    headers.forEach(header => {
+        console.log(getNumberOfLines(header));
+    })
+};
+
+function bracketManager () {
+    headers.forEach(header => {
+        const lines = getNumberOfLines(header);
+        const originalText = header.dataset.originalText;
+
+        if (lines > 1) {
+            header.textContent = originalText;
+        }
+
+        if (lines === 1) {
+            header.textContent = `{ ${originalText} }`;
+        }
+    })
+};
+
+window.addEventListener('load', () => {
+    logRects();
+    bracketManager();
+});
+
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        logRects();
+        bracketManager();
+    }, 100);
+});

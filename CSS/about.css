@@ -673,14 +673,6 @@
 
 
 @media (pointer: coarse) and (hover: none){
-    .introCloseText a, .introCloseText_shorter a{
-        animation: shiftleft 5s infinite;
-    }
-
-    .introCloseText a:nth-of-type(2), .introCloseText_shorter a:nth-of-type(2){
-        animation: shiftright 5s infinite;
-    }
-
     .slides img, .gridItem img, .sectionItem.image{
         filter: grayscale(0);
     }
@@ -698,6 +690,15 @@
 
     .prev:hover, .next:hover{
         background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media (hover: none) and (max-width: 900px){
+    .introCloseText a, .introCloseText_shorter a{
+        animation: shiftleft 5s infinite;
+    }
+    .introCloseText a:nth-of-type(2), .introCloseText_shorter a:nth-of-type(2){
+        animation: shiftright 5s infinite;
     }
 }
 
