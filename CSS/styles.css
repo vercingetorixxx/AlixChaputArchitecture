@@ -633,6 +633,9 @@ main{
   .dividerDarkMode, .lightModeToggle{
     display: none !important;
   }
+  .circle{
+    background-color: white;
+  }
 }
 
 
@@ -667,6 +670,14 @@ main{
   }
   .dividerDarkMode, .lightModeToggle{
     display: flex !important;
+    justify-content: end;
+  }
+  .circle{
+    background-color: #1A1A1A;
+  }
+  .circle img{
+    margin: 0 0 1% 9%;
+    transform: rotate(190deg); 
   }
 }
 
@@ -780,4 +791,8 @@ main{
 }
 .lightmode :where(.dividerDarkMode){
   display: none;
+}
+
+.lightmode :is(.circle){
+  background-color: white;
 }
