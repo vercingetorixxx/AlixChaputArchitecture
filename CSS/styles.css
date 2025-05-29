@@ -139,7 +139,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
   opacity: 1;
   transition: opacity 0.5s ease;
 }
@@ -729,9 +728,10 @@ main{
 }
 
 .darkmode :is(.darkModeToggle){
-  display: none;
+  display: none !important;
 }
 .darkmode :is(.lightModeToggle){
+  display: flex !important;
   justify-content: end;
 }
 .darkmode :is(.circle){
@@ -745,7 +745,7 @@ main{
 .darkmode :is(.header h1){
   animation: glow1 7s ease-in-out infinite alternate;
 }
-.name{
+.darkmode :is(.name){
   animation: glow2 7s ease-in-out infinite alternate;
 }
 
