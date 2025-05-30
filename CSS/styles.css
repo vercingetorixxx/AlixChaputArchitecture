@@ -30,12 +30,15 @@
   --linkMargin: 4vw;
   --textSize: 1.1rem;
   --sectionItemPadding: var(--halfUnit);
+  --coverImageHeight: calc(100vh - calc(var(--navHeight) + 2px));
+  --coverImageWidth: 100vw;
 }
 
 @supports(height: 1svh){
   :root{
     --unit: 14svh;
     --itemMaxHeight: calc(100svh - (var(--unit) * 3));
+    --coverImageHeight: calc(100svh - calc(var(--navHeight) + 2px));
   }
 }
 
@@ -113,6 +116,10 @@
     text-shadow: 0 0 2px #FF3366, 0 0 4px #CC294F, 0 0 6px #991F3A, 0 0 8px #661426;
   }
 }
+@keyframes shiftUp{
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(0vh); }
+} 
 @keyframes shiftDown{
   0% { transform: translateY(0rem); }
   50% { transform: translateY(1.5rem); }
@@ -381,6 +388,115 @@ h2.header{
 }
 
 
+/* ------------- COVERIMAGE ------------ */
+
+
+.coverImage{
+    height: var(--coverImageHeight);
+    width: var(--coverImageWidth);
+    margin-top: calc(var(--navHeight) + 2px);
+    position: relative;
+    overflow: hidden;
+}
+
+.slides{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img{
+    height: var(--coverImageHeight);
+    width: var(--coverImageWidth);
+    flex: 0 0 var(--coverImageWidth);
+    object-fit: cover;
+    object-position: 22% 50%;
+    transition: filter 0.5s ease;
+    display: block;
+}
+.slides:not(.project) img{
+    filter: grayscale(1);
+}
+.slides:not(.project) img:hover{
+    filter: grayscale(0);
+}
+
+.clicker{
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 10px 14.4px 10px;
+}
+.clicker:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev, .next{
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+}
+.prev{
+    left: 10px;
+}
+.next{
+    right: 10px;
+}
+
+.rest{
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    color: #D3D3D3;
+    transform: translateX(50%);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+.rest:hover{
+    color: white;
+}
+.rest.project{
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+}
+.rest.project:hover{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.border{
+    position: absolute;
+    transition: top 2s ease;
+    width: 100%;
+    background: repeating-linear-gradient(
+        to right, var(--bgGradientColors));
+    top: 0;
+    transition: top 2s ease;
+}
+.border:not(.moveUp):not(.marginTop), .border:not(.moveUp):not(.marginTop) *{
+    display: none;
+}
+.border.moveUp{
+    animation: shiftUp 1.5s ease-in-out 1;
+}
+
+.rest2{
+    top: 0;
+    right: 50%;
+    transform: translateX(50%) rotate(-90deg);
+    color: var(--color6);
+    background-color: var(--color7);
+}
+.rest2:hover{
+    background-color: var(--color8);
+}
+
+.border.moveDown{
+    top: 100vh;
+}
+
 
 /* ------------- SECTION TILES ------------ */
 
@@ -518,7 +634,7 @@ h2.header{
   font-weight: bold;
   font-size: 11cqi;
 }
-.contract, .contentWrapper span{
+.contract, .sectionItem .contentWrapper span{
   display: block;
 }
 .paper, .paper *{
@@ -664,6 +780,11 @@ h2.header{
     --unit: 10vh;
     --navHeight: max(calc(var(--halfUnit) * 1.39), 2.5rem);
   }
+
+  .clicker{
+    font-size: 30px;
+    padding: 7.5px 7.5px 10.8px 7.5px;
+  }
 }
 
 
@@ -723,6 +844,15 @@ h2.header{
     --unit: 6vh;
     --navHeight: max(calc(var(--halfUnit) * 1.84), 2rem);
   }
+
+  .clicker{
+    font-size: 20px;
+    padding: 5px 5px 7.2px 5px;
+  }
+  .rest{
+    font-size: 1.5rem;
+  }
+
   .titleText, .titleText span{
     --textSize: 1.6rem;
   }
@@ -778,6 +908,10 @@ h2.header{
   .flipper.flipped{
     transform: rotateY(-180deg) !important;
   }
+
+  .prev:hover, .next:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+  }
   
   .slides img, .sectionItem.image{
     filter: grayscale(0);
@@ -812,6 +946,13 @@ h2.header{
     :root{
       --unit: 6svh;
     }
+  }
+  @keyframes shiftUp{
+    0% { transform: translateY(100svh); }
+    100% { transform: translateY(0vh); }
+  } 
+  .border.moveDOwn{
+    top: 100svh;
   }
 }
 

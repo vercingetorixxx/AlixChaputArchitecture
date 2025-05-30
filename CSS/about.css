@@ -3,118 +3,15 @@
     --sigHeight: calc(var(--halfUnit));
     --sigWidth: calc(var(--sigHeight) * 2.73);
     --sectionItemHeight: calc((var(--elWidth) - var(--halfUnit)) / 3);    
-    --coverImageHeight: calc(100vh - calc(var(--navHeight) + 2px));
-    --coverImageWidth: 100vw;
 }
 
 @supports(height: 1svh){
     :root{
         --introHeight: calc(100svh - (var(--unit) * 2 + var(--navHeight)));
-        --coverImageHeight: calc(100svh - calc(var(--navHeight) + 2px));
     }
 }
 
-@keyframes shiftUp{
-    0% { transform: translateY(100vh); }
-    100% { transform: translateY(0vh); }
-} 
 
-.coverImage{
-    height: var(--coverImageHeight);
-    width: var(--coverImageWidth);
-    margin-top: calc(var(--navHeight) + 2px);
-    position: relative;
-    overflow: hidden;
-}
-
-.slides{
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slides img{
-    height: var(--coverImageHeight);
-    width: var(--coverImageWidth);
-    flex: 0 0 var(--coverImageWidth);
-    object-fit: cover;
-    object-position: 22% 50%;
-    filter: grayscale(1);
-    transition: filter 0.5s ease;
-    display: block;
-}
-.slides img:hover{
-    filter: grayscale(0);
-}
-
-.clicker{
-    position: absolute;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 10px 10px 14.4px 10px;
-}
-.clicker:hover{
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev, .next{
-    top: 50%;
-    transform: translateY(-50%);
-    user-select: none;
-}
-.prev{
-    left: 10px;
-}
-.next{
-    right: 10px;
-}
-
-.rest{
-    position: absolute;
-    bottom: 0;
-    right: 50%;
-    color: #D3D3D3;
-    transform: translateX(50%);
-    font-size: 2rem;
-    margin-bottom: 20px;
-    transition: color 0.5s ease;
-    cursor: pointer;
-}
-.rest:hover{
-    color: white;
-}
-
-.border{
-    position: absolute;
-    transition: top 2s ease;
-    width: 100%;
-    background: repeating-linear-gradient(
-        to right, var(--bgGradientColors));
-    top: 0;
-    transition: top 2s ease;
-}
-.border:not(.moveUp), .border:not(.moveUp) *{
-    display: none;
-}
-.border.moveUp{
-    animation: shiftUp 1.5s ease-in-out 1;
-}
-
-.rest2{
-    top: 0;
-    right: 50%;
-    transform: translateX(50%) rotate(-90deg);
-    color: var(--color6);
-    background-color: var(--color7);
-}
-.rest2:hover{
-    background-color: var(--color8);
-}
-
-.border.moveDown{
-    top: 100vh;
-}
 
 .intro{
     max-width: var(--elWidth);
@@ -330,11 +227,6 @@
         --sigHeight: calc(var(--halfUnit) * 1.5);
     }
 
-    .clicker{
-        font-size: 30px;
-        padding: 7.5px 7.5px 10.8px 7.5px;
-    }
-
     .intro{
         flex-direction: column;
         height: var(--introHeight);
@@ -441,13 +333,6 @@
 
 
 @media (max-width: 575px) or (max-aspect-ratio: 1/3){
-    .clicker{
-        font-size: 20px;
-        padding: 5px 5px 7.2px 5px;
-    }
-    .rest{
-        font-size: 1.5rem;
-    }
     #signature{
         bottom: 0rem;
     }
@@ -497,10 +382,6 @@
     .flipper.flipped{
         transform: rotateY(-180deg) !important;
     }
-
-    .prev:hover, .next:hover{
-        background-color: rgba(0, 0, 0, 0.3);
-    }
 }
 
 @media (hover: none) and (max-width: 900px){
@@ -516,15 +397,5 @@
 @media (max-width: 800px) and (min-width: 701px){
     :root{
         --sectionItemPadding: var(--thirdUnit);
-    }
-}
-
-@supports(height: 1svh){
-    @keyframes shiftUp{
-        0% { transform: translateY(100svh); }
-        100% { transform: translateY(0vh); }
-    } 
-    .border.moveDOwn{
-        top: 100svh;
     }
 }

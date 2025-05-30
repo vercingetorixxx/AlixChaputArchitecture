@@ -7,7 +7,7 @@
 }
 
 .back .contentWrapper > div:last-of-type{
-  margin-bottom: min(28cqi, var(--sectionItemPadding));
+  margin-bottom: min(28cqi, calc(14cqi + var(--sectionItemPadding)));
 }
 
 .front h3{
@@ -68,6 +68,10 @@ span.left{
 
 .replace{
   display: none;
+}
+
+.flipper.special{
+  border: 2px dotted red;
 }
 
 
