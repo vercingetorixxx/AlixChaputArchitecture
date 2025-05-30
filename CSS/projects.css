@@ -7,7 +7,7 @@
 }
 
 .back .contentWrapper > div:last-of-type{
-  margin-bottom: 28cqi;
+  margin-bottom: min(28cqi, var(--sectionItemPadding));
 }
 
 .front h3{
