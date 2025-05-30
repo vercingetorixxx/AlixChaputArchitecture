@@ -1,19 +1,3 @@
-// -------- .siContainer flip ----------- //
-
-
-document.querySelectorAll('.siContainer').forEach(container => {
-    container.addEventListener('click', () => {
-        container.querySelector('.flipper').classList.toggle('flipped');
-        container.classList.add('flipping');
-
-        // Remove flipping class after transition ends
-        setTimeout(() => {
-        container.classList.remove('flipping');
-        }, 1000);
-    });
-});
-
-
 // -------- image slideshow ----------- //
 
 
