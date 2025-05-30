@@ -565,7 +565,7 @@ h2.header{
   .sectionItem:not(#mainTools .sectionItem){
       --sectionItemPadding: var(--halfUnit);
   }
-  .sectionItem.image.odds{
+  .siContainer.odds, .sectionItem.image.odds{
       display: none;
   }
   .sectionItem.image.evens{
@@ -704,10 +704,10 @@ h2.header{
   .section:not(#mainTools){
       grid-template-columns: repeat(1, 1fr);
   }
-  .sectionItem.image.odds{
+  .siContainer.odds, .sectionItem.image.odds{
       display: flex;
   }
-  .sectionItem.image.multiples{
+  .sectionItem.image.multiples, .siContainer.multiples{
       display: none;
   }
 
@@ -772,6 +772,13 @@ h2.header{
 
 
 @media (pointer: coarse) and (hover: none){
+  .flipper:hover, .flipped:hover{
+    transform: none;
+  }
+  .flipper.flipped{
+    transform: rotateY(-180deg) !important;
+  }
+  
   .slides img, .sectionItem.image{
     filter: grayscale(0);
   }
