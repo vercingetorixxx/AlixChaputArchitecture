@@ -71,7 +71,7 @@ span.left{
 }
 
 .flipper.special{
-  border: 2px dotted red;
+  border: 2px dotted var(--color1);
 }
 
 

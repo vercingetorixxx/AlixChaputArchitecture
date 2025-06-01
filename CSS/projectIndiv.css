@@ -1,0 +1,92 @@
+.slides.project .projectImgContainer{
+    overflow: auto;
+    height: var(--coverImageHeight);
+    width: var(--coverImageWidth);
+    flex: 0 0 var(--coverImageWidth);
+    display: block;
+}
+
+.projectImgContainer img{
+    height: auto;
+    width: auto;
+    object-fit: cover;
+    object-position: 0% 0%;
+    display: block;
+}
+
+.rest.project{
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+}
+.rest.project:hover{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.projectContent{
+    display: grid;
+    width: var(--elWidth);
+    grid-template-columns: 1fr 2fr;
+    gap: var(--sectionItemPadding);
+}
+
+.siContainer{
+    aspect-ratio: 1/1.3;
+}
+
+.flipper.special{
+    border: 2px dotted var(--color1);
+}
+
+.projectRight{
+    background: var(--containerBg);
+    padding: var(--sectionItemPadding);
+    height: fit-content;
+    align-self: start;
+}
+.projectRight .contentWrapper{
+    height: fit-content;
+    flex: none;
+}
+
+.projectText{
+    columns: 2;
+    text-align: justify;
+    column-gap: calc(var(--sectionItemPadding) / 2);
+}
+
+
+
+@media (min-aspect-ratio: 1.43 / 1) {
+    .projectImgContainer img{
+        width: var(--coverImageWidth);
+    }
+}
+
+@media (max-aspect-ratio: 1.43 / 1) {
+    .projectImgContainer img{
+        height: var(--coverImageHeight);
+    }
+}
+
+@media (max-width: 1250px) or (max-aspect-ratio: 1/3) {
+    .projectContent{
+        grid-template-columns: 1.5fr 2fr;
+    }
+    .projectText{
+        columns: 1;
+    }
+}
+
+@media (max-width: 800px) or (max-aspect-ratio: 1/3) {
+    .rest.project{
+        font-size: 1.5rem;
+        padding: 7.5px 15px;
+    }
+}
+
+@media (max-width: 450px) or (max-aspect-ratio: 1/3) {
+    .rest.project{
+        padding: 5px 10px;
+        font-size: 1.2rem;
+    }
+}
