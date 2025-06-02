@@ -225,4 +225,8 @@
 	.projectRight *{
 		font-size: 0.8rem;
 	}
+
+	.projectRight .contentWrapper {
+		max-height: 80vh;
+	}
 }

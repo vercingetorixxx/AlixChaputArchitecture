@@ -374,7 +374,7 @@
 
 @media (min-aspect-ratio: 1.75 / 1) and (max-height: 400px) {
 	:root{
-		--introHeight: calc(100vw - (var(--unit) * 2 + var(--navHeight)));
+		--introHeight: calc(200vh);
 	}
 
 	.intro {
@@ -401,6 +401,10 @@
 		padding: var(--halfUnit);
 		position: relative;
 		flex: none;
+	}
+
+	#introText {
+		column-count: 1;
 	}
 
 	@supports(width: 1svw){
