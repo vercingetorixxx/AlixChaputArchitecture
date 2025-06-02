@@ -372,10 +372,13 @@
 
 
 
-@media (min-aspect-ratio: 1.75 / 1) and (max-height: 400px) {
-	:root{
-		--introHeight: calc(200vh);
+@media (min-aspect-ratio: 1.75 / 1) and (max-height: 900px) {
+	.intro {
+		--introHeight: calc(100vh);
 	}
+}
+
+@media (min-aspect-ratio: 1.75 / 1) and (max-height: 400px) {
 
 	.intro {
 		flex-direction: row;

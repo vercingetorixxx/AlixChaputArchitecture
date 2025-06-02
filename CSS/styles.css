@@ -1383,28 +1383,30 @@ h2.header {
 
 @media (min-aspect-ratio: 1.75 / 1) and (max-height: 900px) {
   :root {
-    --unit: 14vw;
+    --unit: 8svw;
   }
-
-  .section:not(#mainTools) {
-    grid-template-columns: repeat(2, 1fr);
+  @supports(width: 1svw){
+    :root{
+      --unit: 8svw;
+    }
   }
 
   .siContainer.odds,
   .sectionItem.image.odds {
+    display: flex;
+  }
+
+  .siContainer.evens,
+  .sectionItem.image.evens {
     display: none;
   }
 
-  .sectionItem.image.evens {
-    display: flex;
+  .section:not(#mainTools) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   #mainTools{
     grid-template-columns: repeat(3, 1fr) !important;
-  }
-
-  :root{
-    --unit: 14vw;
   }
 
   .sectionItem:not(#mainTools .sectionItem):not(.project){
@@ -1415,11 +1417,21 @@ h2.header {
     margin-bottom: 5px;
     font-size: 1.5rem;
   }
+}
 
-  @supports(width: 1svw){
-    :root{
-      --unit: 14svw;
-    }
+@media (min-aspect-ratio: 1.75 / 1) and (max-height: 500px) {
+  .section:not(#mainTools) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .siContainer.odds,
+  .sectionItem.image.odds {
+    display: none;
+  }
+
+  .siContainer.evens,
+  .sectionItem.image.evens {
+    display: flex;
   }
 }
 
