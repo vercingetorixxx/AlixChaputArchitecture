@@ -1,132 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alix Chaput Architecture</title>
-  <link href="../../CSS/styles.css" rel="stylesheet"/>
-  <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Projet 1 | Alix C. Architecture</title>
+	<link href="../../CSS/styles.css" rel="stylesheet" />
+	<link href="../../CSS/projects.css" rel="stylesheet" />
+	<link href="../../CSS/projectIndiv.css" rel="stylesheet" />
+	<link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
 </head>
 
 <body>
 
-  <nav id="mainNav" aria-label="Main navigation">
-    <div class="navText">
-      <a href="../../index.html" class="title long"><div class="title long"><span class="bold">ALIX CHAPUT</span> <span class="ghost">| </span>ARCHITECTURE</div></a>
-      <a href="../../index.html" class="title short"><div class="title short"><span class="bold">ALIX C.</span> ARCHITECTURE</div></a>
-      <div class="links main">
-        <a class="link" href="../about.html">ABOUT</a>
-        <a class="link" href="../projects.html">PROJECTS</a>
-        <a class="link" href="../contact.html">CONTACT ME</a>
-      </div>
-    </div>
-    <a class="language long" href="../../en/about.html" alt="English"><img src="../../images/UK.webp"></a>
-  </nav>
+	<nav class="mainNav" aria-label="Main navigation">
+		<a href="../../index.html" class="noMarginText titleText long"><span class="name">ALIX CHAPUT</span> <span
+				class="ghost">| </span>ARCHITECTURE</a>
+		<a href="../../index.html" class="noMarginText titleText short"><span class="name">ALIX C.</span> ARCHITECTURE</a>
+		<div class="links main">
+			<a class="link" href="../about.html">
+				<div class="noMarginText">ABOUT</div>
+			</a>
+			<a class="link" href="../projects.html">
+				<div class="noMarginText">PROJECTS</div>
+			</a>
+			<a class="link" href="../contact.html">
+				<div class="noMarginText">CONTACT ME</div>
+			</a>
+			<a class="link" href="../../fr/projects/project1.html" alt="French"><img src="../../images/France.webp"></a>
+			<button class="link darkModeToggle">
+				<div class="circle"><img src="../../images/icons/sun.webp" /></div>
+			</button>
+			<button class="link lightModeToggle">
+				<div class="circle"><img src="../../images/icons/moon.webp" /></div>
+			</button>
+		</div>
+	</nav>
 
-  <input id="hamToggle" type="checkbox" style="display: none">
-  <label id="hamIcon" for="hamToggle">
-    <div class="hamLine"></div><div class="hamLine"></div><div class="hamLine"></div>
-  </label>
-  <nav id="hamburger" aria-label="Small-screen navigation">
-    <div class="navText">
-      <div class="links hamburger long">
-        <a class="link" href="../about.html">ABOUT</a>
-        <a class="link" href="../projects.html">PROJECTS</a>
-        <a class="link" href="../contact.html">CONTACT ME</a>
-        <a class="language short" href="../../en/about.html" alt="English"><img src="../../images/UK.webp"></a>
-      </div>
-      <div class="links hamburger short">
-        <a class="link" href="../about.html">ABOUT</a><div>&nbsp;&nbsp;|&nbsp;&nbsp;</div
-          ><a class="link" href="../projects.html">PROJECTS</a><div>&nbsp;&nbsp;|&nbsp;&nbsp;</div
-          ><a class="link" href="../contact.html">CONTACT ME</a><div>&nbsp;&nbsp;|&nbsp;&nbsp;</div
-          ><a class="language short" href="../../en/about.html" alt="English"><img src="../../images/UK.webp"></a>
-      </div>
-    </div>
-  </nav>
+	<input id="hamToggle" type="checkbox" style="display: none">
+	<label class="hamIcon" for="hamToggle">
+		<div class="hamLine"></div>
+		<div class="hamLine"></div>
+		<div class="hamLine"></div>
+	</label>
+	<nav class="hamburger" aria-label="Small-screen navigation">
+		<div class="links hamburgerLinks">
+			<a class="link" href="../about.html">
+				<div class="noMarginText">À PROPOS</div>
+			</a>
+			<a class="link" href="../projects.html">
+				<div class="noMarginText">PROJETS</div>
+			</a>
+			<a class="link" href="../contact.html">
+				<div class="noMarginText shortLink">CONTACT</div>
+			</a>
+			<a class="link" href="../../fr/projects/project1.html" alt="French"><img src="../../images/France.webp"></a>
+			<button class="link darkModeToggle">
+				<div class="circle"><img src="../../images/icons/sun.webp" /></div>
+			</button>
+			<button class="link lightModeToggle">
+				<div class="circle"><img src="../../images/icons/moon.webp" /></div>
+			</button>
+		</div>
+	</nav>
 
-  <div class="startEnd start marginTop">
-    <div class="divider left">
-        <img src="../../images/asterisk.webp">
-    </div>
-    <div class="header">
-      <h1>PROJECT NAME</h1>
-    </div>
-    <div class="divider right">
-        <img src="../../images/asterisk.webp">
-    </div>
-  </div>
+	<div class="coverImage">
+		<div class="slides project">
+			<div class="projectImgContainer">
+				<img src="../../images/projects/project7/one.webp" class="projectImg" alt="project image" />
+			</div>
+			<div class="projectImgContainer">
+				<img src="../../images/projects/project7/two.webp" class="projectImg" alt="project image" />
+			</div>
+		</div>
+		<div class="prev clicker">❮</div>
+		<div class="next clicker">❯</div>
+		<div class="rest project">EN SAVOIR PLUS</div>
+	</div>
 
-  <main id="main">
+	<div class="border">
 
-    <div class="longform project">
-      <div class="longform contentWrapper">
-        <div class="longLeft project">
-          <div class="contentWrapper">
-            <h2>RENOVATION & RESTORATION</h2>
-            <div class="bold">
-              <div class="wrap1">with Erika Kos &</div
-                ><div class="wrap2">&nbsp;Aurélie Terrien</div>
-            </div>
-            <ul>
-              <li>Autumn 2019 - Semester 7</li>
-              <li>Duration: 8 weeks</li>
-            </ul>
-          </div>
-        </div>
-        <div class="longRight project">
-          <div class="contentWrapper item">
-            <div class="rightContent item">
-              <h2>Background and Programme</h2>
-              <p>
-                The first semester of the master's degree is part of the field of study 
-                'Ecology: Pierre et Terre'. The challenge is to design an eco-neighbourhood 
-                on the site of the administrative city of the Villette Park. The administrative 
-                city is now settled in prefabricated buildings built in the 75s. This unique 
-                site is located between the park of the Villette and the dock of the bottom of 
-                Rouvray and has a significant potential for the creation of an eco-quartier in 
-                Paris.
-              </p>
-            </div>
-            <div class="rightContent item">
-              <h2>To be Denected</h2>
-              <p>
-                This project is divided into several stages. Initially, analysis and programming 
-                make it possible to propose an urban project that is consistent with the context 
-                of the nineteenth arrondissement of Paris. Indeed, cartographic and sociological 
-                analysis makes it possible to give shape to the programme.The urban project is 
-                taking shape and architectural intentions are emerging. Subsequently, his 
-                architectural intentions will take shape with an individual project where the 
-                challenge will be to propose a construction based on the use of geo-sourced 
-                materials such as stone or earth.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="mediacontainer">
-      <iframe src="https://www.youtube.com/embed/oznr-1-poSU" title="Sample Video" 
-      allowfullscreen></iframe>
-    </div>
+		<div class="rest2 clicker">❯</div>
 
-    <div class="mediacontainer">
-      <img src="../../images/project1/project1sampleimg.webp" class="projectimg" title="Sample Image"/>
-    </div>
+		<div class="startEnd start">
+			<div class="divider left down">
+				<img class="dividerLightMode" src="../../images/icons/iconDown.webp">
+				<img class="dividerDarkMode" src="../../images/darkIcons/down.webp">
+			</div>
 
-  </main>
+			<h1 class="header">ARTWORKS</h1>
 
-  <div class="startEnd">
-    <div class="divider left">
-        <img src="../../images/asterisk.webp">
-    </div>
-    <div class="credits">
-      Website by <span class="bold">Chanwu Oh</span>
-    </div>
-    <div class="divider right">
-        <img src="../../images/asterisk.webp">
-    </div>
-  </div>
+			<div class="divider right down">
+				<img class="dividerLightMode" src="../../images/icons/iconDown.webp">
+				<img class="dividerDarkMode" src="../../images/darkIcons/down.webp">
+			</div>
+		</div>
+
+		<main id="main">
+
+			<div class="projectContent">
+
+				<div class="siContainer">
+					<div class="flipper">
+						<div class="sectionItem front project">
+							<div class="contentWrapper">
+								<div>
+									<h3>ARTWORKS</h3>
+									<div class="ita subTitle">
+										<i>TRAVAUX PERSONNELS</i>
+									</div>
+								</div>
+								<div class="contract"><i>PASSION: DESSIN</i></div>
+								<span class="bold">Sélection non exhaustive<br>Médiums traditionnels & digital painting</span>
+								<div class="descDate">2020 - 2024</div>
+								<div class="noMarginText number">1</div>
+							</div>
+						</div>
+						<div class="sectionItem back project">
+							<div class="contentWrapper">
+								<div>Dessins d'architecture | Croquis | Natures mortes | Portraits | Personnages</div>
+								<div class="left">
+									<div>MÉDIUM TRADITIONNELS</div>
+									<div>MINES | Crayon graphite et couleur, encre, feutre</div>
+									<div>PEINTURES | Aquarelle, acrylique, huile</div>
+								</div>
+								<div>
+									<div>MÉDIUM DIGITAL</div>
+									<div>LOGICIEL | Krita</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="projectRight">
+					<div class="collaborators columns">
+						<div class="column1">
+							<h2>MÉDIUM TRADITIONNELS</h2>
+							<div>MINES | Crayon graphite et couleur, encre, feutre</div>
+							<div>PEINTURES | Aquarelle, acrylique, huile</div>
+						</div>
+						<div class="column2">
+							<h2>MÉDIUM DIGITAL</h2>
+							<div>LOGICIEL | Krita</div>
+						</div>
+					</div>
+					<div class="contentWrapper">
+						<h2>PASSION: DESSIN</h2>
+						<div class="projectText">
+							<p>En dehors de ma pratique de l'architecture et de manière amatrice,
+								le dessin tient une place importante dans ma vie. Il est l'une des
+								raisons fondamentales pour laquelle j'en suis venue à faire ce
+								métier et je continue de le pratiquer par passion au-delà de la
+								sphère professionnelle.</p><br>
+							<p>Je met volontiers en avant les œuvres qui me représentent
+								aujourd'hui et je ne cesse, en outre, de vouloir me perfectionner.
+								L'apprentissage et la progression étant intrinsèquement liée à
+								toute pratique artistique, j'arpente constamment le monde du
+								dessin en quête de découvertes tant techniques que créatives. Ma
+								pratique personnelle rejoint parfois le monde de l'architecture
+								lorsqu'il m'arrive, comme présenté ci-dessous, de peindre des
+								scènes où l'architecture domine</p><br>
+							<p>Mais elle s'en éloigne aussi largement lorsque mes sujets
+								prennent de toutes autres formes, comme celles de l'objet ou de
+								la figure humaine. La sélection qui suit n'est ni exhaustive ni
+								complètement représentative de mon univers mais elle donne à voir
+								une palette de sujets et de techniques dont je suis familière et
+								qui me cor-respond.</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</main>
+
+		<div class="startEnd">
+			<div class="divider left up">
+				<img class="dividerLightMode" src="../../images/icons/iconUp.webp">
+				<img class="dividerDarkMode" src="../../images/darkIcons/up.webp">
+			</div>
+			<div class="credits">
+				Site Web par <span class="bold">Chanwu Oh</span>
+			</div>
+			<div class="divider right up">
+				<img class="dividerLightMode" src="../../images/icons/iconUp.webp">
+				<img class="dividerDarkMode" src="../../images/darkIcons/up.webp">
+			</div>
+		</div>
+
+		<script src="../../JavaScript/script.js"></script>
+		<script src="../../JavaScript/projectIndiv.js"></script>
+		<script src="../../JavaScript/slides.js"></script>
 
 </body>
+
 </html>
