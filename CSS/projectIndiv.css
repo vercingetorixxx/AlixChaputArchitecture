@@ -97,6 +97,8 @@
 	}
 }
 
+
+
 @media (max-width: 1300px) and (min-width: 1025px) {
 	.projectRight * {
 		font-size: 0.9rem;
@@ -203,5 +205,24 @@
 
 	.projectRight h2 {
 		font-size: 1rem;
+	}
+}
+
+
+
+@media (min-aspect-ratio: 1.75 / 1) and (max-height: 900px) {
+	.projectContent {
+		grid-template-columns: 1.5fr 2fr;
+		gap: var(--quarterUnit);
+		width: 100%;
+	}
+
+	.siContainer{
+		width: 100%;
+		margin: none;
+	}
+
+	.projectRight *{
+		font-size: 0.8rem;
 	}
 }

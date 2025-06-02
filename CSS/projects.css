@@ -87,3 +87,10 @@ span.left{
     gap: var(--unit);
   }
 }
+
+
+@media (min-aspect-ratio: 1.43 / 1) and (max-height: 900px) {
+  .section:not(#mainTools) {
+    gap: var(--halfUnit);
+  }
+}
