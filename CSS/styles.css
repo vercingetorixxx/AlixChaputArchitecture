@@ -385,7 +385,7 @@ button.link {
 .circle img {
   height: 80%;
   width: 80%;
-  margin: 0 0 1% 0;
+  margin: 1.5% 0 0 1.5%;
   border-radius: 50%;
 }
 
@@ -1320,6 +1320,11 @@ h2.header {
   display: inline-block;
 }
 
+.darkmode :is(.circle img) {
+  margin: 0 0 1% 9%;
+  transform: rotate(190deg);
+}
+
 
 
 /* ---------- LIGHTMODE ---------- */
@@ -1378,6 +1383,11 @@ h2.header {
   background-color: white;
 }
 
+.lightmode :is(.circle img) {
+  margin: 1.5% 0 0 1.5%;
+  transform: rotate(0deg);
+}
+
 
 
 
@@ -1414,7 +1424,7 @@ h2.header {
   }
 
   .rest {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 1.5rem;
   }
 }
@@ -1438,6 +1448,10 @@ h2.header {
 @media (min-aspect-ratio: 1.75 / 1) and (max-height: 400px) {
   :root {
     --unit: 8vw;
+  }
+
+  .rest {
+    margin-bottom: 5px;
   }
 
   .rest2 {

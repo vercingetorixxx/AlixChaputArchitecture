@@ -374,6 +374,16 @@
 
 @media (min-aspect-ratio: 1.75 / 1) and (max-height: 900px) {
 	.intro {
+		--introHeight: calc(70vh);
+	}
+
+	#introText {
+		column-count: 1;
+	}
+}
+
+@media (min-aspect-ratio: 1.75 / 1) and (max-height: 600px) {
+	.intro {
 		--introHeight: calc(100vh);
 	}
 }
@@ -404,10 +414,6 @@
 		padding: var(--halfUnit);
 		position: relative;
 		flex: none;
-	}
-
-	#introText {
-		column-count: 1;
 	}
 
 	@supports(width: 1svw){
