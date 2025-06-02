@@ -916,7 +916,7 @@ h2.header{
 
 
 @media (max-width: 1300px) and (min-width: 1025px){
-    #introText p, .projectRight p{
+    #introText p{
         font-size: 0.9rem;
     }
 }

@@ -2,80 +2,80 @@
 
 
 function navigateTo(url) {
-    fetch(url)
-        .then(response => response.text())
-        .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            
-            // Update the page title from the new <head>
-            const newTitle = doc.querySelector('title')?.textContent || 'Alix C. Architecture';
-            document.title = newTitle;
+	fetch(url)
+		.then(response => response.text())
+		.then(html => {
+			const parser = new DOMParser();
+			const doc = parser.parseFromString(html, 'text/html');
 
-            // Compute Set of new stylesheet hrefs
-            const docHrefs = new Set([...doc.querySelectorAll('link[rel="stylesheet"]')].map(link => link.href));
-            const oldScriptSrcs = new Set([...document.querySelectorAll('script')].map(script => script.src));
+			// Update the page title from the new <head>
+			const newTitle = doc.querySelector('title')?.textContent || 'Alix C. Architecture';
+			document.title = newTitle;
 
-            // Add new CSS stylesheets
-            doc.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
-                if (!document.querySelector(`link[href="${link.href}"]`)) {
-                    document.head.appendChild(link.cloneNode());
-                }
-            });
+			// Compute Set of new stylesheet hrefs
+			const docHrefs = new Set([...doc.querySelectorAll('link[rel="stylesheet"]')].map(link => link.href));
+			const oldScriptSrcs = new Set([...document.querySelectorAll('script')].map(script => script.src));
 
-            // Extract the new #main-content from the <body>
-            const newContent = doc.querySelector('#main-content').innerHTML;
+			// Add new CSS stylesheets
+			doc.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+				if (!document.querySelector(`link[href="${link.href}"]`)) {
+					document.head.appendChild(link.cloneNode());
+				}
+			});
 
-            // Create a new div for the content with initial opacity 0
-            const newDiv = document.createElement('div');
-            newDiv.className = 'page-content';
-            newDiv.innerHTML = newContent;
-            newDiv.style.opacity = '0';
+			// Extract the new #main-content from the <body>
+			const newContent = doc.querySelector('#main-content').innerHTML;
 
-            const container = document.getElementById('content-container');
-            container.appendChild(newDiv);
+			// Create a new div for the content with initial opacity 0
+			const newDiv = document.createElement('div');
+			newDiv.className = 'page-content';
+			newDiv.innerHTML = newContent;
+			newDiv.style.opacity = '0';
 
-            const currentContent = document.getElementById('current-content');
+			const container = document.getElementById('content-container');
+			container.appendChild(newDiv);
 
-            // Animate the transition
-            requestAnimationFrame(() => {
-                currentContent.style.opacity = '0';
-                newDiv.style.opacity = '1';
-            });
+			const currentContent = document.getElementById('current-content');
 
-            // Clean up after the transition ends
-            newDiv.addEventListener('transitionend', () => {
-                container.removeChild(currentContent);
-                newDiv.id = 'current-content';
+			// Animate the transition
+			requestAnimationFrame(() => {
+				currentContent.style.opacity = '0';
+				newDiv.style.opacity = '1';
+			});
 
-                // Remove old styles
-                document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
-                    if (!docHrefs.has(link.href)) {
-                        link.remove();
-                    }
-                });
+			// Clean up after the transition ends
+			newDiv.addEventListener('transitionend', () => {
+				container.removeChild(currentContent);
+				newDiv.id = 'current-content';
 
-                doc.querySelectorAll('script').forEach(script => {
-                    if (!oldScriptSrcs.has(script.src)) {
-                        const newScript = document.createElement('script');
-                        newScript.src = script.src;
-                        doc.body.appendChild(newScript);
-                    }
-                });
+				// Remove old styles
+				document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+					if (!docHrefs.has(link.href)) {
+						link.remove();
+					}
+				});
 
-                // document.querySelectorAll('script').forEach(script => script.remove());
+				doc.querySelectorAll('script').forEach(script => {
+					if (!oldScriptSrcs.has(script.src)) {
+						const newScript = document.createElement('script');
+						newScript.src = script.src;
+						doc.body.appendChild(newScript);
+					}
+				});
 
-                // const scripts = doc.querySelectorAll('script');
-                // scripts.forEach(script => {
-                //     const newScript = document.createElement('script');
-                //     newScript.src = script.src;
-                //     document.body.appendChild(newScript);
-                // });
+				// document.querySelectorAll('script').forEach(script => script.remove());
 
-            }, { once: true });
+				// const scripts = doc.querySelectorAll('script');
+				// scripts.forEach(script => {
+				//     const newScript = document.createElement('script');
+				//     newScript.src = script.src;
+				//     document.body.appendChild(newScript);
+				// });
 
-            // Update the browser history
-            history.pushState({}, '', url);
-        })
-        .catch(error => console.error('Navigation failed:', error));
+			}, { once: true });
+
+			// Update the browser history
+			history.pushState({}, '', url);
+		})
+		.catch(error => console.error('Navigation failed:', error));
 }
