@@ -23,7 +23,7 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  color: var(--color6);
+  color: var(--color1);
   background: var(--color7);
   font-size: 8cqi;
   border: 1px solid var(--color6);
@@ -70,7 +70,7 @@ span.left{
   display: none;
 }
 
-.flipper.special{
+.flipper{
   border: 2px dotted var(--color1);
 }
 
