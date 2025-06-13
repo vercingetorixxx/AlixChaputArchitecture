@@ -863,7 +863,7 @@ h2.header {
     left: 0;
     border: none;
     z-index: 5;
-    transition: transform 0.5s ease;
+    transition: transform 0.42s ease, top 0.42s ease 0.42s, opacity 0.42s ease 0.42s;
   }
 
   .hamIcon .hamLine:nth-child(1) {
@@ -875,7 +875,7 @@ h2.header {
   }
 
   .hamIcon .hamLine:nth-child(3) {
-    bottom: 0px;
+    top: 22px;
   }
 
   #hamToggle:checked~.hamburger {
@@ -890,6 +890,10 @@ h2.header {
     z-index: 4;
     background-color: var(--color4);
     color: var(--color1);
+  }
+
+  #hamToggle:checked+.hamIcon .hamLine{
+    transition: transform 0.42s ease 0.42s, top 0.42s ease, opacity 0.42s ease;
   }
 
   #hamToggle:checked+.hamIcon .hamLine:nth-child(1) {
@@ -1096,7 +1100,7 @@ h2.header {
 
   .slides img,
   .sectionItem.image {
-    filter: grayscale(0);
+    filter: grayscale(0) !important;
   }
 
   .link:hover {
@@ -1245,11 +1249,11 @@ h2.header {
 .darkmode {
   color: #D3D3D3;
   --bgGradientColors:
-    rgb(90, 80, 130) 0%,
-    rgb(120, 80, 140) 20%,
-    rgb(140, 100, 140) 50%,
-    rgb(120, 80, 140) 80%,
-    rgb(90, 80, 130) 100%;
+    #14161a 0%,
+    #1f2126 25%,
+    #292933 50%,
+    #1f2126 75%,
+    #14161a 100%;
   --containerBg: rgba(0, 0, 0, 0.5);
   --color1: #FF3366;
   --color2: #FFC2CC;

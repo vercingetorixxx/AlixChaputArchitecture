@@ -57,9 +57,15 @@ span.left{
   container-type: inline-size;
 }
 
+.sectionItem.image img {
+  aspect-ratio: 1/1.3;
+  object-fit: cover;
+}
+
 .imgCaption{
   padding: calc(var(--sectionItemPadding) / 2);
   overflow: hidden;
+  display: none; /* temporary measure while captions are not ready */
 }
 .imgCaption .contentWrapper{
   font-size: 3.5cqi;
