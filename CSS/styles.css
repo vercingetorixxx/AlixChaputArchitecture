@@ -1188,11 +1188,11 @@ h2.header {
 @media (prefers-color-scheme: dark) {
   :root {
     --bgGradientColors:
-      rgb(100, 90, 110) 0%,
-      rgb(80, 100, 120) 20%,
-      rgb(120, 120, 100) 50%,
-      rgb(140, 90, 110) 80%,
-      rgb(100, 90, 110) 100%;
+      #14161a 0%,
+      #1f2126 25%,
+      #292933 50%,
+      #1f2126 75%,
+      #14161a 100%;
     --containerBg: rgba(0, 0, 0, 0.5);
     --color1: #FF3366;
     --color2: #FFC2CC;
@@ -1267,11 +1267,11 @@ h2.header {
 
 .darkmode::before {
   --bgGradientColors:
-    rgb(90, 80, 130) 0%,
-    rgb(120, 80, 140) 20%,
-    rgb(140, 100, 140) 50%,
-    rgb(120, 80, 140) 80%,
-    rgb(90, 80, 130) 100%;
+    #14161a 0%,
+    #1f2126 25%,
+    #292933 50%,
+    #1f2126 75%,
+    #14161a 100%;
 }
 
 .darkmode :is(.darkModeToggle) {
