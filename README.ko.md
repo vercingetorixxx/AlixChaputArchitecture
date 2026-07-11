@@ -1,10 +1,10 @@
 # Alix Chaput Architecture
 
-_[Read this in English 🇬🇧](README.md)_
+_[Read this in English 🇬🇧](README.md) · [문서](docs/README.md)_
 
 건축가 Alix Chaput의 포트폴리오 웹사이트입니다.
 
-**→ 라이브 사이트:** https://ohchanwu.github.io/AlixChaputArchitecture/
+**→ 라이브 사이트:** https://ohchanwu.github.io/alix-chaput-architecture/
 
 ## 프로젝트 소개
 
